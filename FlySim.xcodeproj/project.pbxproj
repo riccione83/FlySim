@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		93A268C719F7A0A1003335BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268C619F7A0A1003335BE /* main.m */; };
+		93A268CA19F7A0A1003335BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268C919F7A0A1003335BE /* AppDelegate.m */; };
+		93A268CD19F7A0A1003335BE /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268CC19F7A0A1003335BE /* GameScene.m */; };
+		93A268CF19F7A0A1003335BE /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 93A268CE19F7A0A1003335BE /* GameScene.sks */; };
+		93A268D219F7A0A1003335BE /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268D119F7A0A1003335BE /* GameViewController.m */; };
+		93A268D519F7A0A1003335BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A268D319F7A0A1003335BE /* Main.storyboard */; };
+		93A268D719F7A0A1003335BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A268D619F7A0A1003335BE /* Images.xcassets */; };
+		93A268DA19F7A0A1003335BE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A268D819F7A0A1003335BE /* LaunchScreen.xib */; };
+		93A268E619F7A0A1003335BE /* FlySimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268E519F7A0A1003335BE /* FlySimTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		93A268E019F7A0A1003335BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93A268B919F7A0A1003335BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93A268C019F7A0A1003335BE;
+			remoteInfo = FlySim;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		93A268C119F7A0A1003335BE /* FlySim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlySim.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A268C519F7A0A1003335BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93A268C619F7A0A1003335BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		93A268C819F7A0A1003335BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		93A268C919F7A0A1003335BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		93A268CB19F7A0A1003335BE /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		93A268CC19F7A0A1003335BE /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		93A268CE19F7A0A1003335BE /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		93A268D019F7A0A1003335BE /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		93A268D119F7A0A1003335BE /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		93A268D419F7A0A1003335BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		93A268D619F7A0A1003335BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		93A268D919F7A0A1003335BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		93A268DF19F7A0A1003335BE /* FlySimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlySimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A268E419F7A0A1003335BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93A268E519F7A0A1003335BE /* FlySimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlySimTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		93A268BE19F7A0A1003335BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93A268DC19F7A0A1003335BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		93A268B819F7A0A1003335BE = {
+			isa = PBXGroup;
+			children = (
+				93A268C319F7A0A1003335BE /* FlySim */,
+				93A268E219F7A0A1003335BE /* FlySimTests */,
+				93A268C219F7A0A1003335BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		93A268C219F7A0A1003335BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93A268C119F7A0A1003335BE /* FlySim.app */,
+				93A268DF19F7A0A1003335BE /* FlySimTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93A268C319F7A0A1003335BE /* FlySim */ = {
+			isa = PBXGroup;
+			children = (
+				93A268C819F7A0A1003335BE /* AppDelegate.h */,
+				93A268C919F7A0A1003335BE /* AppDelegate.m */,
+				93A268CB19F7A0A1003335BE /* GameScene.h */,
+				93A268CC19F7A0A1003335BE /* GameScene.m */,
+				93A268CE19F7A0A1003335BE /* GameScene.sks */,
+				93A268D019F7A0A1003335BE /* GameViewController.h */,
+				93A268D119F7A0A1003335BE /* GameViewController.m */,
+				93A268D319F7A0A1003335BE /* Main.storyboard */,
+				93A268D619F7A0A1003335BE /* Images.xcassets */,
+				93A268D819F7A0A1003335BE /* LaunchScreen.xib */,
+				93A268C419F7A0A1003335BE /* Supporting Files */,
+			);
+			path = FlySim;
+			sourceTree = "<group>";
+		};
+		93A268C419F7A0A1003335BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				93A268C519F7A0A1003335BE /* Info.plist */,
+				93A268C619F7A0A1003335BE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		93A268E219F7A0A1003335BE /* FlySimTests */ = {
+			isa = PBXGroup;
+			children = (
+				93A268E519F7A0A1003335BE /* FlySimTests.m */,
+				93A268E319F7A0A1003335BE /* Supporting Files */,
+			);
+			path = FlySimTests;
+			sourceTree = "<group>";
+		};
+		93A268E319F7A0A1003335BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				93A268E419F7A0A1003335BE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		93A268C019F7A0A1003335BE /* FlySim */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93A268E919F7A0A1003335BE /* Build configuration list for PBXNativeTarget "FlySim" */;
+			buildPhases = (
+				93A268BD19F7A0A1003335BE /* Sources */,
+				93A268BE19F7A0A1003335BE /* Frameworks */,
+				93A268BF19F7A0A1003335BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlySim;
+			productName = FlySim;
+			productReference = 93A268C119F7A0A1003335BE /* FlySim.app */;
+			productType = "com.apple.product-type.application";
+		};
+		93A268DE19F7A0A1003335BE /* FlySimTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93A268EC19F7A0A1003335BE /* Build configuration list for PBXNativeTarget "FlySimTests" */;
+			buildPhases = (
+				93A268DB19F7A0A1003335BE /* Sources */,
+				93A268DC19F7A0A1003335BE /* Frameworks */,
+				93A268DD19F7A0A1003335BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93A268E119F7A0A1003335BE /* PBXTargetDependency */,
+			);
+			name = FlySimTests;
+			productName = FlySimTests;
+			productReference = 93A268DF19F7A0A1003335BE /* FlySimTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		93A268B919F7A0A1003335BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Riccardo Rizzo";
+				TargetAttributes = {
+					93A268C019F7A0A1003335BE = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					93A268DE19F7A0A1003335BE = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 93A268C019F7A0A1003335BE;
+					};
+				};
+			};
+			buildConfigurationList = 93A268BC19F7A0A1003335BE /* Build configuration list for PBXProject "FlySim" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 93A268B819F7A0A1003335BE;
+			productRefGroup = 93A268C219F7A0A1003335BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				93A268C019F7A0A1003335BE /* FlySim */,
+				93A268DE19F7A0A1003335BE /* FlySimTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		93A268BF19F7A0A1003335BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93A268DA19F7A0A1003335BE /* LaunchScreen.xib in Resources */,
+				93A268D719F7A0A1003335BE /* Images.xcassets in Resources */,
+				93A268CF19F7A0A1003335BE /* GameScene.sks in Resources */,
+				93A268D519F7A0A1003335BE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93A268DD19F7A0A1003335BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		93A268BD19F7A0A1003335BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93A268D219F7A0A1003335BE /* GameViewController.m in Sources */,
+				93A268CA19F7A0A1003335BE /* AppDelegate.m in Sources */,
+				93A268CD19F7A0A1003335BE /* GameScene.m in Sources */,
+				93A268C719F7A0A1003335BE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93A268DB19F7A0A1003335BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93A268E619F7A0A1003335BE /* FlySimTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		93A268E119F7A0A1003335BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93A268C019F7A0A1003335BE /* FlySim */;
+			targetProxy = 93A268E019F7A0A1003335BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		93A268D319F7A0A1003335BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93A268D419F7A0A1003335BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		93A268D819F7A0A1003335BE /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93A268D919F7A0A1003335BE /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		93A268E719F7A0A1003335BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		93A268E819F7A0A1003335BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		93A268EA19F7A0A1003335BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FlySim/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		93A268EB19F7A0A1003335BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FlySim/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		93A268ED19F7A0A1003335BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FlySimTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlySim.app/FlySim";
+			};
+			name = Debug;
+		};
+		93A268EE19F7A0A1003335BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FlySimTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlySim.app/FlySim";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		93A268BC19F7A0A1003335BE /* Build configuration list for PBXProject "FlySim" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93A268E719F7A0A1003335BE /* Debug */,
+				93A268E819F7A0A1003335BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93A268E919F7A0A1003335BE /* Build configuration list for PBXNativeTarget "FlySim" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93A268EA19F7A0A1003335BE /* Debug */,
+				93A268EB19F7A0A1003335BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		93A268EC19F7A0A1003335BE /* Build configuration list for PBXNativeTarget "FlySimTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93A268ED19F7A0A1003335BE /* Debug */,
+				93A268EE19F7A0A1003335BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 93A268B919F7A0A1003335BE /* Project object */;
+}
