@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
+#import "WelcomeScreen.h"
 
 @implementation SKScene (Unarchive)
 
@@ -42,8 +43,11 @@
     skView.ignoresSiblingOrder = YES;
     
     // Create and configure the scene.
-    GameScene *scene = [GameScene unarchiveFromFile:@"GameScene"];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+   // WecomeScreen *scene = [WecomeScreen unarchiveFromFile:@"WelcomeScreen"];  //gamescene
+    
+    GameScene *scene = [GameScene unarchiveFromFile:@"GameScene"];  //gamescene
+    scene.scaleMode = SKSceneScaleModeAspectFit; //SKSceneScaleModeAspectFill;
+
     
     // Present the scene.
     [skView presentScene:scene];

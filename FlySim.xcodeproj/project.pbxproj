@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9310BE6519FBFBB6002F88F4 /* Rocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9310BE6419FBFBB6002F88F4 /* Rocket.m */; };
+		932D828319FD626100BCBB44 /* ufo.png in Resources */ = {isa = PBXBuildFile; fileRef = 932D828219FD626100BCBB44 /* ufo.png */; };
+		937EED0019FC26DE0090932D /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 937EECFF19FC26DE0090932D /* spark.png */; };
+		937EED0219FC3D680090932D /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 937EED0119FC3D680090932D /* Fire.sks */; };
+		9399297319FFB8C1005A41C4 /* WelcomeScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9399297219FFB8C1005A41C4 /* WelcomeScreen.sks */; };
 		93A268C719F7A0A1003335BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268C619F7A0A1003335BE /* main.m */; };
 		93A268CA19F7A0A1003335BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268C919F7A0A1003335BE /* AppDelegate.m */; };
 		93A268CD19F7A0A1003335BE /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268CC19F7A0A1003335BE /* GameScene.m */; };
@@ -14,8 +19,14 @@
 		93A268D219F7A0A1003335BE /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268D119F7A0A1003335BE /* GameViewController.m */; };
 		93A268D519F7A0A1003335BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A268D319F7A0A1003335BE /* Main.storyboard */; };
 		93A268D719F7A0A1003335BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A268D619F7A0A1003335BE /* Images.xcassets */; };
-		93A268DA19F7A0A1003335BE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93A268D819F7A0A1003335BE /* LaunchScreen.xib */; };
 		93A268E619F7A0A1003335BE /* FlySimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268E519F7A0A1003335BE /* FlySimTests.m */; };
+		93A268F319F7A5DC003335BE /* rocket_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A268F019F7A5DC003335BE /* rocket_1.png */; };
+		93A268F419F7A5DC003335BE /* rocket_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A268F119F7A5DC003335BE /* rocket_up.png */; };
+		93A268F519F7A5DC003335BE /* rocket_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A268F219F7A5DC003335BE /* rocket_dwn.png */; };
+		93A268F719F7AB54003335BE /* ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A268F619F7AB54003335BE /* ground.png */; };
+		93A268F919F7AB81003335BE /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A268F819F7AB81003335BE /* background.png */; };
+		93AA844219FC454100535ADA /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 93AA844119FC454100535ADA /* Star.png */; };
+		93D3589819FF987000210B6A /* WelcomeScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3589719FF987000210B6A /* WelcomeScreen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9310BE6319FBFBB6002F88F4 /* Rocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rocket.h; sourceTree = "<group>"; };
+		9310BE6419FBFBB6002F88F4 /* Rocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rocket.m; sourceTree = "<group>"; };
+		932D828219FD626100BCBB44 /* ufo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ufo.png; sourceTree = "<group>"; };
+		937EECFF19FC26DE0090932D /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		937EED0119FC3D680090932D /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
+		9399297219FFB8C1005A41C4 /* WelcomeScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WelcomeScreen.sks; sourceTree = "<group>"; };
 		93A268C119F7A0A1003335BE /* FlySim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlySim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A268C519F7A0A1003335BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A268C619F7A0A1003335BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,10 +58,17 @@
 		93A268D119F7A0A1003335BE /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		93A268D419F7A0A1003335BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93A268D619F7A0A1003335BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		93A268D919F7A0A1003335BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		93A268DF19F7A0A1003335BE /* FlySimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlySimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A268E419F7A0A1003335BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A268E519F7A0A1003335BE /* FlySimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlySimTests.m; sourceTree = "<group>"; };
+		93A268F019F7A5DC003335BE /* rocket_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rocket_1.png; sourceTree = "<group>"; };
+		93A268F119F7A5DC003335BE /* rocket_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rocket_up.png; sourceTree = "<group>"; };
+		93A268F219F7A5DC003335BE /* rocket_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rocket_dwn.png; sourceTree = "<group>"; };
+		93A268F619F7AB54003335BE /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground.png; sourceTree = "<group>"; };
+		93A268F819F7AB81003335BE /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		93AA844119FC454100535ADA /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
+		93D3589619FF987000210B6A /* WelcomeScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeScreen.h; sourceTree = "<group>"; };
+		93D3589719FF987000210B6A /* WelcomeScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeScreen.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,17 +110,26 @@
 		93A268C319F7A0A1003335BE /* FlySim */ = {
 			isa = PBXGroup;
 			children = (
+				932D828219FD626100BCBB44 /* ufo.png */,
+				93AA844119FC454100535ADA /* Star.png */,
+				937EED0119FC3D680090932D /* Fire.sks */,
+				937EECFF19FC26DE0090932D /* spark.png */,
+				93A268EF19F7A5C9003335BE /* Images */,
 				93A268C819F7A0A1003335BE /* AppDelegate.h */,
 				93A268C919F7A0A1003335BE /* AppDelegate.m */,
 				93A268CB19F7A0A1003335BE /* GameScene.h */,
 				93A268CC19F7A0A1003335BE /* GameScene.m */,
+				93D3589619FF987000210B6A /* WelcomeScreen.h */,
+				93D3589719FF987000210B6A /* WelcomeScreen.m */,
 				93A268CE19F7A0A1003335BE /* GameScene.sks */,
 				93A268D019F7A0A1003335BE /* GameViewController.h */,
 				93A268D119F7A0A1003335BE /* GameViewController.m */,
+				9399297219FFB8C1005A41C4 /* WelcomeScreen.sks */,
 				93A268D319F7A0A1003335BE /* Main.storyboard */,
 				93A268D619F7A0A1003335BE /* Images.xcassets */,
-				93A268D819F7A0A1003335BE /* LaunchScreen.xib */,
 				93A268C419F7A0A1003335BE /* Supporting Files */,
+				9310BE6319FBFBB6002F88F4 /* Rocket.h */,
+				9310BE6419FBFBB6002F88F4 /* Rocket.m */,
 			);
 			path = FlySim;
 			sourceTree = "<group>";
@@ -125,6 +158,18 @@
 				93A268E419F7A0A1003335BE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		93A268EF19F7A5C9003335BE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				93A268F819F7AB81003335BE /* background.png */,
+				93A268F619F7AB54003335BE /* ground.png */,
+				93A268F019F7A5DC003335BE /* rocket_1.png */,
+				93A268F119F7A5DC003335BE /* rocket_up.png */,
+				93A268F219F7A5DC003335BE /* rocket_dwn.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +221,7 @@
 				TargetAttributes = {
 					93A268C019F7A0A1003335BE = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = RKD82WWETR;
 					};
 					93A268DE19F7A0A1003335BE = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -207,9 +253,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93A268DA19F7A0A1003335BE /* LaunchScreen.xib in Resources */,
+				937EED0219FC3D680090932D /* Fire.sks in Resources */,
+				937EED0019FC26DE0090932D /* spark.png in Resources */,
+				93A268F519F7A5DC003335BE /* rocket_dwn.png in Resources */,
 				93A268D719F7A0A1003335BE /* Images.xcassets in Resources */,
+				932D828319FD626100BCBB44 /* ufo.png in Resources */,
+				9399297319FFB8C1005A41C4 /* WelcomeScreen.sks in Resources */,
 				93A268CF19F7A0A1003335BE /* GameScene.sks in Resources */,
+				93A268F719F7AB54003335BE /* ground.png in Resources */,
+				93A268F319F7A5DC003335BE /* rocket_1.png in Resources */,
+				93A268F419F7A5DC003335BE /* rocket_up.png in Resources */,
+				93AA844219FC454100535ADA /* Star.png in Resources */,
+				93A268F919F7AB81003335BE /* background.png in Resources */,
 				93A268D519F7A0A1003335BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,10 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9310BE6519FBFBB6002F88F4 /* Rocket.m in Sources */,
 				93A268D219F7A0A1003335BE /* GameViewController.m in Sources */,
 				93A268CA19F7A0A1003335BE /* AppDelegate.m in Sources */,
 				93A268CD19F7A0A1003335BE /* GameScene.m in Sources */,
 				93A268C719F7A0A1003335BE /* main.m in Sources */,
+				93D3589819FF987000210B6A /* WelcomeScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,14 +317,6 @@
 				93A268D419F7A0A1003335BE /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		93A268D819F7A0A1003335BE /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				93A268D919F7A0A1003335BE /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -355,9 +404,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FlySim/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -365,9 +418,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FlySim/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -424,6 +481,7 @@
 				93A268EB19F7A0A1003335BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93A268EC19F7A0A1003335BE /* Build configuration list for PBXNativeTarget "FlySimTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +490,7 @@
 				93A268EE19F7A0A1003335BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

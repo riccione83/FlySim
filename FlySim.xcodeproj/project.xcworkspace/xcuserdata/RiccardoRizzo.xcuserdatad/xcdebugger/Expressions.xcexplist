@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[GameScene addStar]:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.size.height+star.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GameScene checkLife]:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "life1.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
