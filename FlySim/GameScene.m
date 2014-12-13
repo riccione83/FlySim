@@ -478,6 +478,48 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     [self addChild:star];
 }
 
+
+-(void)followShip:(SKSpriteNode*) star {
+    // Imagine shooting an arrow to a point
+    CGMutablePathRef path = CGPathCreateMutable();
+    
+    // This will move an invisible path marker to a starting point
+    // In my case, the node is a child node of a sprite, so it is the local coords and not the screen coords
+    CGPathMoveToPoint(path, NULL, star.position.x-10,star.position.y);
+    
+    // The 3-8th parameters are x/y coords. The arrow iwll first hit x:100 and y:50.
+    // It will then raise up a bit as it keeps going and finally drop to the target at x:300 y:0
+    CGPathAddCurveToPoint(path, NULL,
+                          star.position.x-20, star.position.y,
+                          rocket.rocket.position.x, rocket.rocket.position.y,
+                          -1,rocket.rocket.position.y);  //
+    
+    float deltaX = (star.position.x - rocket.rocket.position.x);
+    deltaX = (deltaX)/self.size.width;
+    
+    // Create an action based on this curve. oritentToPath will make the arrows tip point up and down in the correct spots.
+    // Be careful, it is based off of each sprite having the correct default state. (i.e.: arrows and characters are vertical by default)
+    SKAction *followCurve = [SKAction followPath:path asOffset:NO orientToPath:NO duration:SpeedLevel*deltaX];
+    
+    SKAction *removeNode = [SKAction removeFromParent];
+    
+    SKAction *sequence = [SKAction sequence:@[followCurve, removeNode]];
+    //SKAction *sequence = [SKAction sequence:@[actionMoveStar,removeNode]];
+    
+    // Run the action on the SKSpriteNode
+    //[arrow runAction:followCurve]
+    [star removeAllActions];
+    [star runAction:sequence];
+    
+  /*  CGPoint diff = rwSub(rocket.rocket.position, star.position);
+    CGPoint norm = rwNormalize(diff);
+    
+    [star setPosition:rwAdd(star.position,rwMult(norm, 2))];
+    SKAction *act = [SKAction moveByX:norm.x*10 y:norm.y*10 duration:0.01];
+    [star runAction:act];
+    */
+}
+
 - (void)addUfo
 {
     SKSpriteNode *star = [[SKSpriteNode alloc] initWithImageNamed:@"ufo.png"];
@@ -487,41 +529,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     star.name = @"ufo";
     star.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:0.5*star.size.width];
     
-    
-    
-    // Imagine shooting an arrow to a point
-    CGMutablePathRef path = CGPathCreateMutable();
-    
-    // This will move an invisible path marker to a starting point
-    // In my case, the node is a child node of a sprite, so it is the local coords and not the screen coords
-    CGPathMoveToPoint(path, NULL, star.position.x,star.position.y);
-    
-    // The 3-8th parameters are x/y coords. The arrow iwll first hit x:100 and y:50.
-    // It will then raise up a bit as it keeps going and finally drop to the target at x:300 y:0
-    CGPathAddCurveToPoint(path, NULL,
-                          star.position.x, star.position.y,
-                          rocket.rocket.position.x, rocket.rocket.position.y,
-                          -1,rocket.rocket.position.y);  //
-    
-    // Create an action based on this curve. oritentToPath will make the arrows tip point up and down in the correct spots.
-    // Be careful, it is based off of each sprite having the correct default state. (i.e.: arrows and characters are vertical by default)
-    SKAction *followCurve = [SKAction followPath:path asOffset:NO orientToPath:NO duration:SpeedLevel];
-    
-
-    
-    
-    
-    SKAction *actionMoveStar = [SKAction moveByX:-1*(self.size.width+star.size.width) y:0 duration:SpeedLevel];
-    SKAction *removeNode = [SKAction removeFromParent];
-    
-    SKAction *sequence = [SKAction sequence:@[followCurve, removeNode]];
-    //SKAction *sequence = [SKAction sequence:@[actionMoveStar,removeNode]];
-    
-    // Run the action on the SKSpriteNode
-    //[arrow runAction:followCurve]
-    
-    [star runAction:sequence];
-    
+    [self followShip:star];
     /* If you want rebounding stars instead of explosions.       *
      * You need to remove collision detection in order to do so  *
      *                                                           *
@@ -536,7 +544,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 -(void)didSimulatePhysics
 {
     [self enumerateChildNodesWithName:@"star" usingBlock:^(SKNode *node, BOOL *stop) {
-        if (node.position.y < 0 || node.position.x < 0) {
+        if (node.position.x < 0) {
             [node removeFromParent];
             numberOfStar--;
         }
@@ -544,7 +552,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     }];
     
     [self enumerateChildNodesWithName:@"ufo" usingBlock:^(SKNode *node, BOOL *stop) {
-        if (node.position.y < 0 || node.position.x < 0) {
+        if (node.position.x < 0) {
             [node removeFromParent];
             numberOfUfo--;
         }
@@ -565,7 +573,41 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     }
 }
 
-//-----------------------EXERCISE 1----------------------------------
+-(SKEmitterNode*) newBubble {
+        SKEmitterNode *explosion = [[SKEmitterNode alloc] init];
+        //TODO: set the right properties for your particle system!
+        [explosion setParticleTexture:[SKTexture textureWithImageNamed:@"bokeh.png"]];
+        [explosion setParticleColor:[UIColor whiteColor]];
+        [explosion setNumParticlesToEmit:50];
+        [explosion setParticleBirthRate:100];
+        [explosion setParticleLifetime:2];
+        [explosion setEmissionAngleRange:360];
+        [explosion setParticleSpeed:100];
+        [explosion setParticleSpeedRange:50];
+        [explosion setXAcceleration:0];
+        [explosion setYAcceleration:0];
+        [explosion setParticleAlpha:0.5];
+        [explosion setParticleAlphaRange:0.2];
+        [explosion setParticleAlphaSpeed:-0.5];
+        [explosion setParticleScale:0.40];
+        [explosion setParticleScaleRange:0.4];
+        [explosion setParticleScaleSpeed:-0.5];
+        [explosion setParticleRotation:0];
+        [explosion setParticleRotationRange:0];
+        [explosion setParticleRotationSpeed:0];
+        
+        [explosion setParticleColorBlendFactor:1];
+        [explosion setParticleColorBlendFactorRange:0];
+        [explosion setParticleColorBlendFactorSpeed:0];
+        [explosion setParticleBlendMode:SKBlendModeAdd];
+        
+        //add this node to parent node
+       // [self addChild:explosion];
+    
+        return explosion;
+}
+
+//-----------------------THIS WILL BE BETTER----------------------------------
 -(void)didBeginContact:(SKPhysicsContact *)contact
 {
     //insantiate new explosion on contact
@@ -574,16 +616,35 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
    // ex.position = contact.bodyB.node.position;
     SKEmitterNode *ex;
     
-    if([contact.bodyB.node.name isEqualToString:@"star"]) {
+    if([contact.bodyA.node.name isEqualToString:@"star"]) {
+        numberOfStar--;
+        //There are a collision from astronaut to => missile
+        if([contact.bodyB.node.name isEqualToString:@"missile"]) {                  //Kill the astronaut
+            SKEmitterNode *ex = [self newExplosion: contact.bodyA.node.name];
+            //set the position of contact
+            ex.zPosition = 101;
+            ex.position = contact.bodyA.node.position;
+            [contact.bodyB.node removeFromParent];                          //Remove the missile
+        }
+        SKAction *explosion_ufo = [SKAction playSoundFileNamed:@"shake.caf" waitForCompletion:NO];
+        [self runAction:explosion_ufo];
+        [contact.bodyA.node removeFromParent];                              //Remove the astronaut
+    }
+    else if([contact.bodyB.node.name isEqualToString:@"star"]) {            //Somewhat has a contact with astronaut
+       
         numberOfStar--;
         score++;
-        if([contact.bodyA.node.name isEqualToString:@"ship"]) {
-          //ex.position = CGPointMake(0, 0);
-            
+        if([contact.bodyA.node.name isEqualToString:@"ship"]) {             //Is the ship?
             SKAction *explosion_ufo = [SKAction playSoundFileNamed:@"powerup.caf" waitForCompletion:NO];
             [self runAction:explosion_ufo];
+            
+            SKEmitterNode *fire = [self newBubble];
+            fire.position = rocket.rocket.position;
+            [self addChild:fire];
+
+            
         }
-        if([contact.bodyA.node.name isEqualToString:@"missile"])
+        if([contact.bodyA.node.name isEqualToString:@"missile"])            //Or is a missile?
         {
              ex = [self newExplosion: contact.bodyB.node.name];
              ex.position = contact.bodyB.node.position;
@@ -597,34 +658,27 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     
     if([contact.bodyB.node.name isEqualToString:@"ufo"]) {
         
-      //  NSLog(@"Collision with UFO");
+        SKAction *explosion_ufo ;
         ex = [self newExplosion: contact.bodyB.node.name];
 
         if([contact.bodyA.node.name isEqualToString:@"ship"])
         {
             [self deleteLife];
             [self shake:2];
-            SKAction *explosion_ufo = [SKAction playSoundFileNamed:@"explosion_large.caf" waitForCompletion:NO];
-            [self runAction:explosion_ufo];
-
+            explosion_ufo = [SKAction playSoundFileNamed:@"explosion_large.caf" waitForCompletion:NO];
         }
-        if([contact.bodyA.node.name isEqualToString:@"missile"])
+        else if([contact.bodyA.node.name isEqualToString:@"missile"])
         {
             [contact.bodyA.node removeFromParent];
-            SKAction *explosion_ufo = [SKAction playSoundFileNamed:@"explosion_small.caf" waitForCompletion:NO];
-            [self runAction:explosion_ufo];
-
+            explosion_ufo = [SKAction playSoundFileNamed:@"explosion_small.caf" waitForCompletion:NO];
         }
+        [self runAction:explosion_ufo];
         ex.position = contact.bodyB.node.position;
         [contact.bodyB.node removeFromParent];
     }
-    
-    
-    if([contact.bodyA.node.name isEqualToString:@"ufo"]) {
-       
-   //     NSLog(@"Collision with UFO");
+    else if([contact.bodyA.node.name isEqualToString:@"ufo"]) {
         if([contact.bodyB.node.name isEqualToString:@"missile"]) {
-            SKEmitterNode *ex = [self newExplosion: contact.bodyA.node.name];
+            ex = [self newExplosion: contact.bodyA.node.name];
             //set the position of contact
             ex.zPosition = 101;
             ex.position = contact.bodyA.node.position;
@@ -635,25 +689,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
         
          [contact.bodyA.node removeFromParent];
     }
-
-    if([contact.bodyA.node.name isEqualToString:@"star"]) {
-        
-        //     NSLog(@"Collision with UFO");
-        if([contact.bodyB.node.name isEqualToString:@"missile"]) {
-            SKEmitterNode *ex = [self newExplosion: contact.bodyA.node.name];
-            //set the position of contact
-            ex.zPosition = 101;
-            ex.position = contact.bodyA.node.position;
-            [contact.bodyB.node removeFromParent];
-        }
-        SKAction *explosion_ufo = [SKAction playSoundFileNamed:@"shake.caf" waitForCompletion:NO];
-        [self runAction:explosion_ufo];
-
-        
-        [contact.bodyA.node removeFromParent];
-    }
-    
-   }
+}
 
 -(void)deleteLife {
     
@@ -795,12 +831,16 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 
     }
     
+    [self enumerateChildNodesWithName:@"ufo" usingBlock:^(SKNode *node, BOOL *stop) {
+        if(node.position.x>rocket.rocket.position.x) {
+            [self followShip:(SKSpriteNode*)node];
+            NSLog(@"Follow node");
+        }
+    }];
     
     timerGenerator = nil;
     float timing = skRand(0.2, 1);
     timerGenerator = [NSTimer scheduledTimerWithTimeInterval:timing target:self selector:@selector(generateNewStar) userInfo:nil repeats:NO];
-   // NSLog(@"Timer: %f",timing);
-    
 }
 
 static inline CGPoint rwAdd(CGPoint a, CGPoint b) {
@@ -834,9 +874,10 @@ static inline CGPoint rwNormalize(CGPoint a) {
     else
     {
         _dt = 0;
+
     }
     _lastUpdateTime = currentTime;
-
+    
     if(oldy < imageJoystick.y)
     {
         SKAction *actionMoveUp = [SKAction moveByX:0 y:5 duration:.2];

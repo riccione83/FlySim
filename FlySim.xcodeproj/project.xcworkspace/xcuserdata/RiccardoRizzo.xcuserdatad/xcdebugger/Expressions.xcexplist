@@ -3,40 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[GameScene update:]:GameScene.m">
+         contextName = "-[GameScene followShip:]:GameScene.m">
          <PersistentStrings>
             <PersistentString
-               value = "numberOfStar">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[GameScene checkLife]:GameScene.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "life1.position">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[GameScene didBeginContact:]:GameScene.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "contact.bodyB.node.name">
-            </PersistentString>
-            <PersistentString
-               value = "contact.bodyB.node.position">
-            </PersistentString>
-            <PersistentString
-               value = "contact.bodyA.node.name">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[GameScene checkButtons]:GameScene.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "normalButton.wasPressed">
+               value = "SpeedLevel*deltaX">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -45,6 +15,14 @@
          <PersistentStrings>
             <PersistentString
                value = "self.size.height+star.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GameScene checkLife]:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "life1.position">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

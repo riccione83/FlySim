@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9310BE6519FBFBB6002F88F4 /* Rocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9310BE6419FBFBB6002F88F4 /* Rocket.m */; };
+		931AA3F11A3C445100B698CB /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = 931AA3EF1A3C445100B698CB /* bokeh.png */; };
+		931AA3F31A3C495500B698CB /* planet_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 931AA3F21A3C495500B698CB /* planet_1.png */; };
+		931AA3F51A3C496900B698CB /* planet_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 931AA3F41A3C496900B698CB /* planet_2.png */; };
+		931AA3F71A3C497700B698CB /* planet_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 931AA3F61A3C497700B698CB /* planet_3.png */; };
 		932D828319FD626100BCBB44 /* ufo.png in Resources */ = {isa = PBXBuildFile; fileRef = 932D828219FD626100BCBB44 /* ufo.png */; };
 		934AEF0F1A285C06000C100C /* JCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AEF0A1A285C06000C100C /* JCButton.m */; };
 		934AEF101A285C06000C100C /* JCImageJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AEF0C1A285C06000C100C /* JCImageJoystick.m */; };
@@ -60,6 +64,10 @@
 /* Begin PBXFileReference section */
 		9310BE6319FBFBB6002F88F4 /* Rocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rocket.h; sourceTree = "<group>"; };
 		9310BE6419FBFBB6002F88F4 /* Rocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rocket.m; sourceTree = "<group>"; };
+		931AA3EF1A3C445100B698CB /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokeh.png; sourceTree = "<group>"; };
+		931AA3F21A3C495500B698CB /* planet_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planet_1.png; sourceTree = "<group>"; };
+		931AA3F41A3C496900B698CB /* planet_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planet_2.png; sourceTree = "<group>"; };
+		931AA3F61A3C497700B698CB /* planet_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planet_3.png; sourceTree = "<group>"; };
 		932D828219FD626100BCBB44 /* ufo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ufo.png; sourceTree = "<group>"; };
 		934AEF091A285C06000C100C /* JCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCButton.h; sourceTree = "<group>"; };
 		934AEF0A1A285C06000C100C /* JCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCButton.m; sourceTree = "<group>"; };
@@ -161,6 +169,7 @@
 		938E4C4B1A27357E0066A637 /* Particle */ = {
 			isa = PBXGroup;
 			children = (
+				931AA3EF1A3C445100B698CB /* bokeh.png */,
 				937EED0119FC3D680090932D /* Fire.sks */,
 				938E4C491A27315A0066A637 /* Projectile.sks */,
 				938E4C451A27307C0066A637 /* Projectile.scnp */,
@@ -251,6 +260,9 @@
 		93A268EF19F7A5C9003335BE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				931AA3F61A3C497700B698CB /* planet_3.png */,
+				931AA3F41A3C496900B698CB /* planet_2.png */,
+				931AA3F21A3C495500B698CB /* planet_1.png */,
 				934AEF121A285CB4000C100C /* redStick.png */,
 				934AEF131A285CB4000C100C /* stickbase.png */,
 				938E4C521A2742FE0066A637 /* spaceman.png */,
@@ -361,11 +373,13 @@
 				937EED0019FC26DE0090932D /* spark.png in Resources */,
 				93A268F519F7A5DC003335BE /* rocket_dwn.png in Resources */,
 				934AEF141A285CB4000C100C /* redStick.png in Resources */,
+				931AA3F51A3C496900B698CB /* planet_2.png in Resources */,
 				93A268D719F7A0A1003335BE /* Images.xcassets in Resources */,
 				938E4C511A27403A0066A637 /* space.jpeg in Resources */,
 				938E4C471A27307C0066A637 /* Projectile.scnp in Resources */,
 				932D828319FD626100BCBB44 /* ufo.png in Resources */,
 				9399297319FFB8C1005A41C4 /* WelcomeScreen.sks in Resources */,
+				931AA3F11A3C445100B698CB /* bokeh.png in Resources */,
 				93A268CF19F7A0A1003335BE /* GameScene.sks in Resources */,
 				938E4C531A2742FE0066A637 /* spaceman.png in Resources */,
 				93A268F719F7AB54003335BE /* ground.png in Resources */,
@@ -376,6 +390,8 @@
 				93A268F919F7AB81003335BE /* background.png in Resources */,
 				938E4C4A1A27315A0066A637 /* Projectile.sks in Resources */,
 				93A268D519F7A0A1003335BE /* Main.storyboard in Resources */,
+				931AA3F71A3C497700B698CB /* planet_3.png in Resources */,
+				931AA3F31A3C495500B698CB /* planet_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
