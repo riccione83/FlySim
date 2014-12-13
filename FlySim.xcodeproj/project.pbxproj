@@ -9,8 +9,26 @@
 /* Begin PBXBuildFile section */
 		9310BE6519FBFBB6002F88F4 /* Rocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9310BE6419FBFBB6002F88F4 /* Rocket.m */; };
 		932D828319FD626100BCBB44 /* ufo.png in Resources */ = {isa = PBXBuildFile; fileRef = 932D828219FD626100BCBB44 /* ufo.png */; };
+		934AEF0F1A285C06000C100C /* JCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AEF0A1A285C06000C100C /* JCButton.m */; };
+		934AEF101A285C06000C100C /* JCImageJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AEF0C1A285C06000C100C /* JCImageJoystick.m */; };
+		934AEF111A285C06000C100C /* JCJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 934AEF0E1A285C06000C100C /* JCJoystick.m */; };
+		934AEF141A285CB4000C100C /* redStick.png in Resources */ = {isa = PBXBuildFile; fileRef = 934AEF121A285CB4000C100C /* redStick.png */; };
+		934AEF151A285CB4000C100C /* stickbase.png in Resources */ = {isa = PBXBuildFile; fileRef = 934AEF131A285CB4000C100C /* stickbase.png */; };
+		934AEF1E1A2871C8000C100C /* SpaceGame.caf in Resources */ = {isa = PBXBuildFile; fileRef = 934AEF1D1A286FB8000C100C /* SpaceGame.caf */; };
+		934AEF1F1A2871C8000C100C /* explosion_small.caf in Resources */ = {isa = PBXBuildFile; fileRef = 934AEF181A286FB8000C100C /* explosion_small.caf */; };
+		934AEF201A2871C8000C100C /* laser_enemy.caf in Resources */ = {isa = PBXBuildFile; fileRef = 934AEF191A286FB8000C100C /* laser_enemy.caf */; };
+		934AEF211A2871C8000C100C /* laser_ship.caf in Resources */ = {isa = PBXBuildFile; fileRef = 934AEF1A1A286FB8000C100C /* laser_ship.caf */; };
+		934AEF221A2871C8000C100C /* powerup.caf in Resources */ = {isa = PBXBuildFile; fileRef = 934AEF1B1A286FB8000C100C /* powerup.caf */; };
+		934AEF231A2871C8000C100C /* shake.caf in Resources */ = {isa = PBXBuildFile; fileRef = 934AEF1C1A286FB8000C100C /* shake.caf */; };
+		934AEF241A2871C8000C100C /* explosion_large.caf in Resources */ = {isa = PBXBuildFile; fileRef = 934AEF171A286FAB000C100C /* explosion_large.caf */; };
 		937EED0019FC26DE0090932D /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 937EECFF19FC26DE0090932D /* spark.png */; };
 		937EED0219FC3D680090932D /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 937EED0119FC3D680090932D /* Fire.sks */; };
+		938E4C471A27307C0066A637 /* Projectile.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 938E4C451A27307C0066A637 /* Projectile.scnp */; };
+		938E4C481A27307C0066A637 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 938E4C461A27307C0066A637 /* spark.png */; };
+		938E4C4A1A27315A0066A637 /* Projectile.sks in Resources */ = {isa = PBXBuildFile; fileRef = 938E4C491A27315A0066A637 /* Projectile.sks */; };
+		938E4C4F1A273BFC0066A637 /* FileSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 938E4C4E1A273BFC0066A637 /* FileSupport.m */; };
+		938E4C511A27403A0066A637 /* space.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 938E4C501A27403A0066A637 /* space.jpeg */; };
+		938E4C531A2742FE0066A637 /* spaceman.png in Resources */ = {isa = PBXBuildFile; fileRef = 938E4C521A2742FE0066A637 /* spaceman.png */; };
 		9399297319FFB8C1005A41C4 /* WelcomeScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9399297219FFB8C1005A41C4 /* WelcomeScreen.sks */; };
 		93A268C719F7A0A1003335BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268C619F7A0A1003335BE /* main.m */; };
 		93A268CA19F7A0A1003335BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268C919F7A0A1003335BE /* AppDelegate.m */; };
@@ -43,8 +61,30 @@
 		9310BE6319FBFBB6002F88F4 /* Rocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rocket.h; sourceTree = "<group>"; };
 		9310BE6419FBFBB6002F88F4 /* Rocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rocket.m; sourceTree = "<group>"; };
 		932D828219FD626100BCBB44 /* ufo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ufo.png; sourceTree = "<group>"; };
+		934AEF091A285C06000C100C /* JCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCButton.h; sourceTree = "<group>"; };
+		934AEF0A1A285C06000C100C /* JCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCButton.m; sourceTree = "<group>"; };
+		934AEF0B1A285C06000C100C /* JCImageJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCImageJoystick.h; sourceTree = "<group>"; };
+		934AEF0C1A285C06000C100C /* JCImageJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCImageJoystick.m; sourceTree = "<group>"; };
+		934AEF0D1A285C06000C100C /* JCJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCJoystick.h; sourceTree = "<group>"; };
+		934AEF0E1A285C06000C100C /* JCJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCJoystick.m; sourceTree = "<group>"; };
+		934AEF121A285CB4000C100C /* redStick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redStick.png; sourceTree = "<group>"; };
+		934AEF131A285CB4000C100C /* stickbase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickbase.png; sourceTree = "<group>"; };
+		934AEF171A286FAB000C100C /* explosion_large.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = explosion_large.caf; sourceTree = "<group>"; };
+		934AEF181A286FB8000C100C /* explosion_small.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = explosion_small.caf; sourceTree = "<group>"; };
+		934AEF191A286FB8000C100C /* laser_enemy.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = laser_enemy.caf; sourceTree = "<group>"; };
+		934AEF1A1A286FB8000C100C /* laser_ship.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = laser_ship.caf; sourceTree = "<group>"; };
+		934AEF1B1A286FB8000C100C /* powerup.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = powerup.caf; sourceTree = "<group>"; };
+		934AEF1C1A286FB8000C100C /* shake.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = shake.caf; sourceTree = "<group>"; };
+		934AEF1D1A286FB8000C100C /* SpaceGame.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpaceGame.caf; sourceTree = "<group>"; };
 		937EECFF19FC26DE0090932D /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		937EED0119FC3D680090932D /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
+		938E4C451A27307C0066A637 /* Projectile.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; name = Projectile.scnp; path = ../Projectile.scnp; sourceTree = "<group>"; };
+		938E4C461A27307C0066A637 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = ../spark.png; sourceTree = "<group>"; };
+		938E4C491A27315A0066A637 /* Projectile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Projectile.sks; path = ../Projectile.sks; sourceTree = "<group>"; };
+		938E4C4D1A273BFC0066A637 /* FileSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileSupport.h; path = ../FileSupport.h; sourceTree = "<group>"; };
+		938E4C4E1A273BFC0066A637 /* FileSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileSupport.m; path = ../FileSupport.m; sourceTree = "<group>"; };
+		938E4C501A27403A0066A637 /* space.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = space.jpeg; sourceTree = "<group>"; };
+		938E4C521A2742FE0066A637 /* spaceman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spaceman.png; sourceTree = "<group>"; };
 		9399297219FFB8C1005A41C4 /* WelcomeScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WelcomeScreen.sks; sourceTree = "<group>"; };
 		93A268C119F7A0A1003335BE /* FlySim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlySim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A268C519F7A0A1003335BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +129,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		934AEF081A285BF2000C100C /* Contoller */ = {
+			isa = PBXGroup;
+			children = (
+				934AEF091A285C06000C100C /* JCButton.h */,
+				934AEF0A1A285C06000C100C /* JCButton.m */,
+				934AEF0B1A285C06000C100C /* JCImageJoystick.h */,
+				934AEF0C1A285C06000C100C /* JCImageJoystick.m */,
+				934AEF0D1A285C06000C100C /* JCJoystick.h */,
+				934AEF0E1A285C06000C100C /* JCJoystick.m */,
+			);
+			name = Contoller;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		934AEF161A286F97000C100C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				934AEF1D1A286FB8000C100C /* SpaceGame.caf */,
+				934AEF181A286FB8000C100C /* explosion_small.caf */,
+				934AEF191A286FB8000C100C /* laser_enemy.caf */,
+				934AEF1A1A286FB8000C100C /* laser_ship.caf */,
+				934AEF1B1A286FB8000C100C /* powerup.caf */,
+				934AEF1C1A286FB8000C100C /* shake.caf */,
+				934AEF171A286FAB000C100C /* explosion_large.caf */,
+			);
+			name = Sounds;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		938E4C4B1A27357E0066A637 /* Particle */ = {
+			isa = PBXGroup;
+			children = (
+				937EED0119FC3D680090932D /* Fire.sks */,
+				938E4C491A27315A0066A637 /* Projectile.sks */,
+				938E4C451A27307C0066A637 /* Projectile.scnp */,
+			);
+			name = Particle;
+			sourceTree = "<group>";
+		};
+		938E4C4C1A27359D0066A637 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				93A268CE19F7A0A1003335BE /* GameScene.sks */,
+				9399297219FFB8C1005A41C4 /* WelcomeScreen.sks */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 		93A268B819F7A0A1003335BE = {
 			isa = PBXGroup;
 			children = (
@@ -110,10 +198,12 @@
 		93A268C319F7A0A1003335BE /* FlySim */ = {
 			isa = PBXGroup;
 			children = (
-				932D828219FD626100BCBB44 /* ufo.png */,
-				93AA844119FC454100535ADA /* Star.png */,
-				937EED0119FC3D680090932D /* Fire.sks */,
-				937EECFF19FC26DE0090932D /* spark.png */,
+				934AEF161A286F97000C100C /* Sounds */,
+				934AEF081A285BF2000C100C /* Contoller */,
+				938E4C4D1A273BFC0066A637 /* FileSupport.h */,
+				938E4C4E1A273BFC0066A637 /* FileSupport.m */,
+				938E4C4C1A27359D0066A637 /* Scenes */,
+				938E4C4B1A27357E0066A637 /* Particle */,
 				93A268EF19F7A5C9003335BE /* Images */,
 				93A268C819F7A0A1003335BE /* AppDelegate.h */,
 				93A268C919F7A0A1003335BE /* AppDelegate.m */,
@@ -121,10 +211,8 @@
 				93A268CC19F7A0A1003335BE /* GameScene.m */,
 				93D3589619FF987000210B6A /* WelcomeScreen.h */,
 				93D3589719FF987000210B6A /* WelcomeScreen.m */,
-				93A268CE19F7A0A1003335BE /* GameScene.sks */,
 				93A268D019F7A0A1003335BE /* GameViewController.h */,
 				93A268D119F7A0A1003335BE /* GameViewController.m */,
-				9399297219FFB8C1005A41C4 /* WelcomeScreen.sks */,
 				93A268D319F7A0A1003335BE /* Main.storyboard */,
 				93A268D619F7A0A1003335BE /* Images.xcassets */,
 				93A268C419F7A0A1003335BE /* Supporting Files */,
@@ -163,6 +251,14 @@
 		93A268EF19F7A5C9003335BE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				934AEF121A285CB4000C100C /* redStick.png */,
+				934AEF131A285CB4000C100C /* stickbase.png */,
+				938E4C521A2742FE0066A637 /* spaceman.png */,
+				938E4C501A27403A0066A637 /* space.jpeg */,
+				938E4C461A27307C0066A637 /* spark.png */,
+				937EECFF19FC26DE0090932D /* spark.png */,
+				932D828219FD626100BCBB44 /* ufo.png */,
+				93AA844119FC454100535ADA /* Star.png */,
 				93A268F819F7AB81003335BE /* background.png */,
 				93A268F619F7AB54003335BE /* ground.png */,
 				93A268F019F7A5DC003335BE /* rocket_1.png */,
@@ -253,18 +349,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				934AEF1E1A2871C8000C100C /* SpaceGame.caf in Resources */,
+				934AEF1F1A2871C8000C100C /* explosion_small.caf in Resources */,
+				934AEF201A2871C8000C100C /* laser_enemy.caf in Resources */,
+				934AEF211A2871C8000C100C /* laser_ship.caf in Resources */,
+				934AEF221A2871C8000C100C /* powerup.caf in Resources */,
+				934AEF231A2871C8000C100C /* shake.caf in Resources */,
+				934AEF241A2871C8000C100C /* explosion_large.caf in Resources */,
 				937EED0219FC3D680090932D /* Fire.sks in Resources */,
+				934AEF151A285CB4000C100C /* stickbase.png in Resources */,
 				937EED0019FC26DE0090932D /* spark.png in Resources */,
 				93A268F519F7A5DC003335BE /* rocket_dwn.png in Resources */,
+				934AEF141A285CB4000C100C /* redStick.png in Resources */,
 				93A268D719F7A0A1003335BE /* Images.xcassets in Resources */,
+				938E4C511A27403A0066A637 /* space.jpeg in Resources */,
+				938E4C471A27307C0066A637 /* Projectile.scnp in Resources */,
 				932D828319FD626100BCBB44 /* ufo.png in Resources */,
 				9399297319FFB8C1005A41C4 /* WelcomeScreen.sks in Resources */,
 				93A268CF19F7A0A1003335BE /* GameScene.sks in Resources */,
+				938E4C531A2742FE0066A637 /* spaceman.png in Resources */,
 				93A268F719F7AB54003335BE /* ground.png in Resources */,
 				93A268F319F7A5DC003335BE /* rocket_1.png in Resources */,
+				938E4C481A27307C0066A637 /* spark.png in Resources */,
 				93A268F419F7A5DC003335BE /* rocket_up.png in Resources */,
 				93AA844219FC454100535ADA /* Star.png in Resources */,
 				93A268F919F7AB81003335BE /* background.png in Resources */,
+				938E4C4A1A27315A0066A637 /* Projectile.sks in Resources */,
 				93A268D519F7A0A1003335BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,11 +393,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				934AEF111A285C06000C100C /* JCJoystick.m in Sources */,
+				934AEF101A285C06000C100C /* JCImageJoystick.m in Sources */,
+				938E4C4F1A273BFC0066A637 /* FileSupport.m in Sources */,
 				9310BE6519FBFBB6002F88F4 /* Rocket.m in Sources */,
 				93A268D219F7A0A1003335BE /* GameViewController.m in Sources */,
 				93A268CA19F7A0A1003335BE /* AppDelegate.m in Sources */,
 				93A268CD19F7A0A1003335BE /* GameScene.m in Sources */,
 				93A268C719F7A0A1003335BE /* main.m in Sources */,
+				934AEF0F1A285C06000C100C /* JCButton.m in Sources */,
 				93D3589819FF987000210B6A /* WelcomeScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

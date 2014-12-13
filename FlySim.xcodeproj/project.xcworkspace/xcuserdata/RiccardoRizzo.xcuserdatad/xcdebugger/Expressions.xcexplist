@@ -3,10 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[GameScene addStar]:GameScene.m">
+         contextName = "-[GameScene update:]:GameScene.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.size.height+star.size.height">
+               value = "numberOfStar">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -15,6 +15,36 @@
          <PersistentStrings>
             <PersistentString
                value = "life1.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GameScene didBeginContact:]:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "contact.bodyB.node.name">
+            </PersistentString>
+            <PersistentString
+               value = "contact.bodyB.node.position">
+            </PersistentString>
+            <PersistentString
+               value = "contact.bodyA.node.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GameScene checkButtons]:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "normalButton.wasPressed">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GameScene addStar]:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.size.height+star.size.height">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

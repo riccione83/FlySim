@@ -7,9 +7,10 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "FileSupport.h"
 
 @interface WecomeScreen : SKScene {
-    
+    float MAX_POINT;
 }
 
 @property (nonatomic) BOOL GameOver;
