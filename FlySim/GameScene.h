@@ -20,6 +20,7 @@
     float numberOfUfo;
     BOOL stopStar;
     NSTimer *timerGenerator;
+    NSTimer *timerPlanet;
     float LEVEL;
     float SpeedLevel;
     NSInteger MAX_NUM_OF_STAR_PER_LEVEL;
@@ -32,7 +33,7 @@
     float numberOfWeapons;
     float MAX_POINT;
     NSInteger oldx,oldy;
-    
+    bool planetShowed;
 }
 
 @property (nonatomic) BOOL WelcomeScreen;

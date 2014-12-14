@@ -73,6 +73,43 @@ static const uint32_t obstacleCategory =  0x1 << 1;
   */
 }
 
+-(void)showPlanet
+{
+    //Create Groud
+    planetShowed = true;
+    NSString *planetName;
+    float rand = skRand(0, 3);
+    float scale = skRand(0.4, 2);
+    float yPosition = skRand(80, (self.size.height/3)*2);
+    
+    
+    if(rand>=0 && rand<1)
+        planetName = @"planet_1.png";
+    else if(rand>=1 && rand<2)
+        planetName = @"planet_2.png";
+    else if (rand>2)
+        planetName = @"planet_3.png";
+    
+    SKTexture *planet = [SKTexture textureWithImageNamed:planetName];
+    planet.filteringMode = SKTextureFilteringNearest;
+    
+    SKAction *moveGroudSprite = [SKAction moveByX:-(self.size.width+(planet.size.width*2)) y:0 duration:10];
+    //SKAction *resetGroundTexture = [SKAction moveByX:planet.size.width*2 y:0 duration:0];
+    //SKAction *moveGroudSpriteForever = [SKAction repeatActionForever:[SKAction sequence:@[moveGroudSprite,resetGroundTexture]]];
+    
+    //for(int i=0; i< 2+ self.frame.size.width / (planet.size.width * 2); i++) {
+        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:planet];
+        [sprite setScale:scale];
+        sprite.position = CGPointMake(self.size.width+planet.size.width, yPosition);
+        [sprite runAction:moveGroudSprite];
+        sprite.zPosition = 1;
+        [self addChild:sprite];
+    
+    timerPlanet = nil;
+    float timing = skRand(11, 15);
+    timerPlanet = [NSTimer scheduledTimerWithTimeInterval:timing target:self selector:@selector(showPlanet) userInfo:nil repeats:NO];
+}
+
 -(void)savePoint {
     if(score>MAX_POINT) {
     FileSupport *file = [[FileSupport alloc] init];
@@ -175,6 +212,9 @@ static const uint32_t obstacleCategory =  0x1 << 1;
         [normalButton setAlpha:0.3];
         normalButton.zPosition = 101;
     [self addChild:normalButton];
+        
+    float timing = skRand(15, 16);
+    timerPlanet = [NSTimer scheduledTimerWithTimeInterval:timing target:self selector:@selector(showPlanet) userInfo:nil repeats:NO];
         
     }
     else
@@ -446,6 +486,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     SKSpriteNode *star = [[SKSpriteNode alloc] initWithImageNamed:@"spaceman.png"];
     star.xScale = 0.5;
     star.yScale = 0.5;
+    star.zPosition = 101;
     star.position = CGPointMake(self.size.width, skRand(0, self.size.height-20));
     star.name = @"star";
     star.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:0.5*star.size.width];
@@ -537,7 +578,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     
     //numberOfStar++;
     numberOfUfo++;
-    star.zPosition = 100;
+    star.zPosition = 101;
     [self addChild:star];
 }
 
