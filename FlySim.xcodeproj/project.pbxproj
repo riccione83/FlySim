@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9310BE6519FBFBB6002F88F4 /* Rocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9310BE6419FBFBB6002F88F4 /* Rocket.m */; };
 		9322F3BF1A3D8007003B6598 /* JCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9322F3BA1A3D8007003B6598 /* JCButton.m */; };
 		9322F3C01A3D8007003B6598 /* JCImageJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 9322F3BC1A3D8007003B6598 /* JCImageJoystick.m */; };
 		9322F3C11A3D8007003B6598 /* JCJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 9322F3BE1A3D8007003B6598 /* JCJoystick.m */; };
@@ -32,15 +31,16 @@
 		9322F3E91A3D803E003B6598 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322F3D91A3D803E003B6598 /* Star.png */; };
 		9322F3EA1A3D803E003B6598 /* stickbase.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322F3DA1A3D803E003B6598 /* stickbase.png */; };
 		9322F3EB1A3D803E003B6598 /* ufo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322F3DB1A3D803E003B6598 /* ufo.png */; };
-		9356F9F51A3D7F5E00B17C53 /* FileSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 9356F9F41A3D7F5E00B17C53 /* FileSupport.m */; };
 		93A268C719F7A0A1003335BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268C619F7A0A1003335BE /* main.m */; };
-		93A268CA19F7A0A1003335BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268C919F7A0A1003335BE /* AppDelegate.m */; };
-		93A268CD19F7A0A1003335BE /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268CC19F7A0A1003335BE /* GameScene.m */; };
-		93A268D219F7A0A1003335BE /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268D119F7A0A1003335BE /* GameViewController.m */; };
 		93A268D519F7A0A1003335BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A268D319F7A0A1003335BE /* Main.storyboard */; };
 		93A268D719F7A0A1003335BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A268D619F7A0A1003335BE /* Images.xcassets */; };
 		93A268E619F7A0A1003335BE /* FlySimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268E519F7A0A1003335BE /* FlySimTests.m */; };
-		93D3589819FF987000210B6A /* WelcomeScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3589719FF987000210B6A /* WelcomeScreen.m */; };
+		93E8B21C1A4322F700C95D6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E8B2111A4322F700C95D6C /* AppDelegate.m */; };
+		93E8B21D1A4322F700C95D6C /* FileSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E8B2131A4322F700C95D6C /* FileSupport.m */; };
+		93E8B21E1A4322F700C95D6C /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E8B2151A4322F700C95D6C /* GameScene.m */; };
+		93E8B21F1A4322F700C95D6C /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E8B2171A4322F700C95D6C /* GameViewController.m */; };
+		93E8B2201A4322F700C95D6C /* Rocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E8B2191A4322F700C95D6C /* Rocket.m */; };
+		93E8B2211A4322F700C95D6C /* WelcomeScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E8B21B1A4322F700C95D6C /* WelcomeScreen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +54,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9310BE6319FBFBB6002F88F4 /* Rocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rocket.h; sourceTree = "<group>"; };
-		9310BE6419FBFBB6002F88F4 /* Rocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rocket.m; sourceTree = "<group>"; };
 		9322F3B21A3D7FF5003B6598 /* explosion_large.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = explosion_large.caf; path = FlySim/Sounds/explosion_large.caf; sourceTree = "<group>"; };
 		9322F3B31A3D7FF5003B6598 /* explosion_small.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = explosion_small.caf; path = FlySim/Sounds/explosion_small.caf; sourceTree = "<group>"; };
 		9322F3B41A3D7FF5003B6598 /* laser_enemy.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = laser_enemy.caf; path = FlySim/Sounds/laser_enemy.caf; sourceTree = "<group>"; };
@@ -90,24 +88,26 @@
 		9322F3D91A3D803E003B6598 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Star.png; path = Images/Star.png; sourceTree = "<group>"; };
 		9322F3DA1A3D803E003B6598 /* stickbase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stickbase.png; path = Images/stickbase.png; sourceTree = "<group>"; };
 		9322F3DB1A3D803E003B6598 /* ufo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ufo.png; path = Images/ufo.png; sourceTree = "<group>"; };
-		9356F9F31A3D7F5E00B17C53 /* FileSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSupport.h; sourceTree = "<group>"; };
-		9356F9F41A3D7F5E00B17C53 /* FileSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSupport.m; sourceTree = "<group>"; };
 		93A268C119F7A0A1003335BE /* FlySim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlySim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A268C519F7A0A1003335BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A268C619F7A0A1003335BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		93A268C819F7A0A1003335BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		93A268C919F7A0A1003335BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		93A268CB19F7A0A1003335BE /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		93A268CC19F7A0A1003335BE /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
-		93A268D019F7A0A1003335BE /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		93A268D119F7A0A1003335BE /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		93A268D419F7A0A1003335BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93A268D619F7A0A1003335BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		93A268DF19F7A0A1003335BE /* FlySimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlySimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A268E419F7A0A1003335BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A268E519F7A0A1003335BE /* FlySimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlySimTests.m; sourceTree = "<group>"; };
-		93D3589619FF987000210B6A /* WelcomeScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeScreen.h; sourceTree = "<group>"; };
-		93D3589719FF987000210B6A /* WelcomeScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeScreen.m; sourceTree = "<group>"; };
+		93E8B2101A4322F700C95D6C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Src/AppDelegate.h; sourceTree = "<group>"; };
+		93E8B2111A4322F700C95D6C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Src/AppDelegate.m; sourceTree = "<group>"; };
+		93E8B2121A4322F700C95D6C /* FileSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileSupport.h; path = Src/FileSupport.h; sourceTree = "<group>"; };
+		93E8B2131A4322F700C95D6C /* FileSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileSupport.m; path = Src/FileSupport.m; sourceTree = "<group>"; };
+		93E8B2141A4322F700C95D6C /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Src/GameScene.h; sourceTree = "<group>"; };
+		93E8B2151A4322F700C95D6C /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = Src/GameScene.m; sourceTree = "<group>"; };
+		93E8B2161A4322F700C95D6C /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameViewController.h; path = Src/GameViewController.h; sourceTree = "<group>"; };
+		93E8B2171A4322F700C95D6C /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameViewController.m; path = Src/GameViewController.m; sourceTree = "<group>"; };
+		93E8B2181A4322F700C95D6C /* Rocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rocket.h; path = Src/Rocket.h; sourceTree = "<group>"; };
+		93E8B2191A4322F700C95D6C /* Rocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Rocket.m; path = Src/Rocket.m; sourceTree = "<group>"; };
+		93E8B21A1A4322F700C95D6C /* WelcomeScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WelcomeScreen.h; path = Src/WelcomeScreen.h; sourceTree = "<group>"; };
+		93E8B21B1A4322F700C95D6C /* WelcomeScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WelcomeScreen.m; path = Src/WelcomeScreen.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,26 +197,15 @@
 		93A268C319F7A0A1003335BE /* FlySim */ = {
 			isa = PBXGroup;
 			children = (
-				9356F9F31A3D7F5E00B17C53 /* FileSupport.h */,
-				9356F9F41A3D7F5E00B17C53 /* FileSupport.m */,
+				93E8B20F1A4322DD00C95D6C /* Src */,
 				934AEF161A286F97000C100C /* Sounds */,
 				934AEF081A285BF2000C100C /* Contoller */,
 				938E4C4C1A27359D0066A637 /* Scenes */,
 				938E4C4B1A27357E0066A637 /* Particle */,
 				93A268EF19F7A5C9003335BE /* Images */,
-				93A268C819F7A0A1003335BE /* AppDelegate.h */,
-				93A268C919F7A0A1003335BE /* AppDelegate.m */,
-				93A268CB19F7A0A1003335BE /* GameScene.h */,
-				93A268CC19F7A0A1003335BE /* GameScene.m */,
-				93D3589619FF987000210B6A /* WelcomeScreen.h */,
-				93D3589719FF987000210B6A /* WelcomeScreen.m */,
-				93A268D019F7A0A1003335BE /* GameViewController.h */,
-				93A268D119F7A0A1003335BE /* GameViewController.m */,
 				93A268D319F7A0A1003335BE /* Main.storyboard */,
 				93A268D619F7A0A1003335BE /* Images.xcassets */,
 				93A268C419F7A0A1003335BE /* Supporting Files */,
-				9310BE6319FBFBB6002F88F4 /* Rocket.h */,
-				9310BE6419FBFBB6002F88F4 /* Rocket.m */,
 			);
 			path = FlySim;
 			sourceTree = "<group>";
@@ -268,6 +257,25 @@
 				9322F3DB1A3D803E003B6598 /* ufo.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		93E8B20F1A4322DD00C95D6C /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				93E8B2101A4322F700C95D6C /* AppDelegate.h */,
+				93E8B2111A4322F700C95D6C /* AppDelegate.m */,
+				93E8B2121A4322F700C95D6C /* FileSupport.h */,
+				93E8B2131A4322F700C95D6C /* FileSupport.m */,
+				93E8B2141A4322F700C95D6C /* GameScene.h */,
+				93E8B2151A4322F700C95D6C /* GameScene.m */,
+				93E8B2161A4322F700C95D6C /* GameViewController.h */,
+				93E8B2171A4322F700C95D6C /* GameViewController.m */,
+				93E8B2181A4322F700C95D6C /* Rocket.h */,
+				93E8B2191A4322F700C95D6C /* Rocket.m */,
+				93E8B21A1A4322F700C95D6C /* WelcomeScreen.h */,
+				93E8B21B1A4322F700C95D6C /* WelcomeScreen.m */,
+			);
+			name = Src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,16 +399,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93E8B21F1A4322F700C95D6C /* GameViewController.m in Sources */,
 				9322F3C11A3D8007003B6598 /* JCJoystick.m in Sources */,
 				9322F3C01A3D8007003B6598 /* JCImageJoystick.m in Sources */,
-				9310BE6519FBFBB6002F88F4 /* Rocket.m in Sources */,
-				9356F9F51A3D7F5E00B17C53 /* FileSupport.m in Sources */,
-				93A268D219F7A0A1003335BE /* GameViewController.m in Sources */,
-				93A268CA19F7A0A1003335BE /* AppDelegate.m in Sources */,
-				93A268CD19F7A0A1003335BE /* GameScene.m in Sources */,
 				93A268C719F7A0A1003335BE /* main.m in Sources */,
+				93E8B21E1A4322F700C95D6C /* GameScene.m in Sources */,
+				93E8B2201A4322F700C95D6C /* Rocket.m in Sources */,
 				9322F3BF1A3D8007003B6598 /* JCButton.m in Sources */,
-				93D3589819FF987000210B6A /* WelcomeScreen.m in Sources */,
+				93E8B21C1A4322F700C95D6C /* AppDelegate.m in Sources */,
+				93E8B2211A4322F700C95D6C /* WelcomeScreen.m in Sources */,
+				93E8B21D1A4322F700C95D6C /* FileSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

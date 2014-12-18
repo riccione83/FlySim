@@ -8,6 +8,7 @@
 
 #import "WelcomeScreen.h"
 #import "GameScene.h"
+#define DEG2RAD(degrees) (degrees * 0.01745327) // degrees * pi over 180
 
 @interface WecomeScreen() {
 }
@@ -34,6 +35,23 @@
         MAX_POINT = 0;
     else
         MAX_POINT = [[pointArray objectAtIndex:0] floatValue];
+    
+    SKTexture *groundTexture = [SKTexture textureWithImageNamed:@"space.jpeg"];
+    groundTexture.filteringMode = SKTextureFilteringNearest;
+    
+    SKAction *moveGroudSprite = [SKAction moveByX:-groundTexture.size.width*2 y:0 duration:0.02 * groundTexture.size.width*2];
+    SKAction *resetGroundTexture = [SKAction moveByX:groundTexture.size.width*2 y:0 duration:0];
+    SKAction *moveGroudSpriteForever = [SKAction repeatActionForever:[SKAction sequence:@[moveGroudSprite,resetGroundTexture]]];
+    
+    for(int i=0; i< 2+ self.frame.size.width / (groundTexture.size.width * 2); i++) {
+        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:groundTexture];
+        [sprite setScale:2];
+        sprite.position = CGPointMake(i * sprite.size.width, 80);
+        [sprite runAction:moveGroudSpriteForever];
+        sprite.zPosition = 0;
+        [self addChild:sprite];
+    }
+    
     
     SKLabelNode *gameOverLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
     if(!_GameOver)
@@ -112,14 +130,30 @@
 
 - (void)addShip
 {
+    NSString *firePath = [[NSBundle mainBundle] pathForResource:@"Fire" ofType:@"sks"];
+    SKEmitterNode *fire = [NSKeyedUnarchiver unarchiveObjectWithFile:firePath];
+    
     SKSpriteNode *star = [[SKSpriteNode alloc] initWithImageNamed:@"rocket_1.png"];
     star.xScale = 0.1;
     star.yScale = 0.1;
     star.position = CGPointMake(0, (self.size.width/2)-200);
     
+    SKEmitterNode *rockettrail = fire;
+    //the y-position needs to be slightly behind the spaceship
+    rockettrail.position = CGPointMake(-390, 0.0);
+    
+    rockettrail.emissionAngle =  DEG2RAD(180.0f);
+    
+    //scaling the particlesystem
+    rockettrail.xScale = 7.0;
+    rockettrail.yScale = 7.0;
+   // rockettrail.zPosition = 2;
+    
+    [star addChild:rockettrail];
+
+    
     SKAction *actionMoveStar = [SKAction moveByX:(self.size.width+star.size.width) y:0 duration:3];
     SKAction *removeNode = [SKAction removeFromParent];
-    
     SKAction *sequence = [SKAction sequence:@[actionMoveStar, removeNode]];
     [star runAction:sequence];
     

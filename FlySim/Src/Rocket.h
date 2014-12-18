@@ -11,7 +11,6 @@
 #import "GameScene.h"
 
 @interface Rocket : NSObject {
-   // SKSpriteNode *_rocket;
     CGRect mainFrame;
     SKAction *actionMoveUp;
     SKAction *actionMoveDown;

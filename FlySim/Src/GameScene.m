@@ -7,13 +7,17 @@
 //
 
 #import "GameScene.h"
-#import "Rocket.h"
+//#import "Rocket.h"
 #import "WelcomeScreen.h"
 @import AVFoundation;
 
 #define DEG2RAD(degrees) (degrees * 0.01745327) // degrees * pi over 180
 static const uint32_t shipCategory =  0x1 << 0;
 static const uint32_t obstacleCategory =  0x1 << 1;
+static const int backgroundLayer = 0;
+static const int gameLayer = 1;
+static const int otherLayer = 2;
+static const int maxNumberOfStar = 10;
 
 @interface GameScene() {
 
@@ -22,8 +26,10 @@ static const uint32_t obstacleCategory =  0x1 << 1;
     JCButton *turboButton;
     JCImageJoystick *imageJoystick;
     SKColor *_skyColor;
-    Rocket *rocket;
+   // Rocket *rocket;
     AVAudioPlayer *_backgroundAudioPlayer;
+    SKSpriteNode *rocket;
+    SKEmitterNode *rockettrail;
 }
 @end
 
@@ -49,20 +55,13 @@ static const uint32_t obstacleCategory =  0x1 << 1;
      SKAction *moveGroudSpriteForever = [SKAction repeatActionForever:[SKAction sequence:@[moveGroudSprite,resetGroundTexture]]];
      
      for(int i=0; i< 2+ self.frame.size.width / (groundTexture.size.width * 2); i++) {
-     SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:groundTexture];
-     [sprite setScale:2];
-     sprite.position = CGPointMake(i * sprite.size.width, 80);
-     [sprite runAction:moveGroudSpriteForever];
-         sprite.zPosition = 0;
-     [self addChild:sprite];
+         SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:groundTexture];
+         [sprite setScale:2];
+         sprite.position = CGPointMake(i * sprite.size.width, 80);
+         [sprite runAction:moveGroudSpriteForever];
+         sprite.zPosition = backgroundLayer;
+         [self addChild:sprite];
      }
-    
-    
-    LEVEL = 1;
-    SpeedLevel = 5;
-    numberOfStar=1;
-    MAX_NUM_OF_STAR_PER_LEVEL = 100;
-    enemyRateo = 0.95;  //0.95
     
  /*
     SKNode *dummy = [SKNode node];
@@ -79,7 +78,7 @@ static const uint32_t obstacleCategory =  0x1 << 1;
     planetShowed = true;
     NSString *planetName;
     float rand = skRand(0, 3);
-    float scale = skRand(0.4, 2);
+    float scale = skRand(0.4, 3);
     float yPosition = skRand(80, (self.size.height/3)*2);
     
     
@@ -93,20 +92,20 @@ static const uint32_t obstacleCategory =  0x1 << 1;
     SKTexture *planet = [SKTexture textureWithImageNamed:planetName];
     planet.filteringMode = SKTextureFilteringNearest;
     
-    SKAction *moveGroudSprite = [SKAction moveByX:-(self.size.width+(planet.size.width*2)) y:0 duration:10];
-    //SKAction *resetGroundTexture = [SKAction moveByX:planet.size.width*2 y:0 duration:0];
-    //SKAction *moveGroudSpriteForever = [SKAction repeatActionForever:[SKAction sequence:@[moveGroudSprite,resetGroundTexture]]];
+    SKAction *moveGroudSprite = [SKAction moveByX:-(self.size.width+(planet.size.width*2)) y:0 duration:5];
+
+    SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:planet];
+    [sprite setScale:scale];
+    sprite.position = CGPointMake(self.size.width+planet.size.width, yPosition);
+    sprite.zPosition = backgroundLayer;
+    sprite.alpha = 1;
+    sprite.name = @"planet";
+    [self addChild:sprite];
+    [sprite runAction:moveGroudSprite];
     
-    //for(int i=0; i< 2+ self.frame.size.width / (planet.size.width * 2); i++) {
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:planet];
-        [sprite setScale:scale];
-        sprite.position = CGPointMake(self.size.width+planet.size.width, yPosition);
-        [sprite runAction:moveGroudSprite];
-        sprite.zPosition = 1;
-        [self addChild:sprite];
-    
+    NSLog(@"Planet: %f Rocket:%f",sprite.zPosition,rocket.zPosition);
     timerPlanet = nil;
-    float timing = skRand(11, 15);
+    float timing = skRand(11, 35);
     timerPlanet = [NSTimer scheduledTimerWithTimeInterval:timing target:self selector:@selector(showPlanet) userInfo:nil repeats:NO];
 }
 
@@ -124,6 +123,9 @@ static const uint32_t obstacleCategory =  0x1 << 1;
 {
     NSError *err;
     NSURL *file = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"SpaceGame.caf" ofType:nil]];
+    if(!_backgroundAudioPlayer)
+    {
+        
     _backgroundAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:file error:&err];
     if (err) {
         NSLog(@"error in audio play %@",[err userInfo]);
@@ -135,15 +137,69 @@ static const uint32_t obstacleCategory =  0x1 << 1;
     _backgroundAudioPlayer.numberOfLoops = -1;
     [_backgroundAudioPlayer setVolume:1.0];
     [_backgroundAudioPlayer play];
-    
+    }
 }
--(void)didMoveToView:(SKView *)view {
 
- //   if(!_WelcomeScreen)
-   //     [self startBackgroundMusic];
+-(void)addJoystick {
+    //JCImageJoystic
+    imageJoystick = [[JCImageJoystick alloc]initWithJoystickImage:(@"redStick.png") baseImage:@"stickbase.png"];
+    [imageJoystick setPosition:CGPointMake(imageJoystick.size.width+10, 100)];
     
+    [imageJoystick setScale:3.0];
+    [imageJoystick setAlpha:0.5];
+    imageJoystick.zPosition=otherLayer;
+    [self addChild:imageJoystick];
+    
+    //JCButton
+    
+    normalButton = [[JCButton alloc] initWithButtonRadius:60 color:[SKColor blueColor] pressedColor:[SKColor clearColor] isTurbo:NO];
+    [normalButton setPosition:CGPointMake(CGRectGetMaxX(self.frame)-normalButton.frame.size.width,100)];
+    [normalButton setAlpha:0.3];
+    normalButton.zPosition = otherLayer;
+    [self addChild:normalButton];
+}
+
+-(void)addRocket {
+    NSString *firePath = [[NSBundle mainBundle] pathForResource:@"Fire" ofType:@"sks"];
+    SKEmitterNode *fire = [NSKeyedUnarchiver unarchiveObjectWithFile:firePath];
+    
+    SKTexture *rocketTexture1 = [SKTexture textureWithImageNamed:@"rocket_1.png"];
+    rocketTexture1.filteringMode = SKTextureFilteringNearest;
+    
+    rocket = [SKSpriteNode spriteNodeWithTexture:rocketTexture1];
+    [rocket setScale:0.2];
+    //rocket.position = point;
+    //Attivare movimento
+    
+    rocket.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:rocket.size.height/2];
+    rocket.physicsBody.categoryBitMask = shipCategory;
+    rocket.physicsBody.dynamic = YES;
+    rocket.physicsBody.contactTestBitMask = obstacleCategory;
+    rocket.physicsBody.collisionBitMask = 0;
+    rocket.name = @"ship";
+    
+    rockettrail = fire;
+    
+    //the y-position needs to be slightly behind the spaceship
+    rockettrail.position = CGPointMake(-390, 0.0);
+    
+    rockettrail.emissionAngle =  DEG2RAD(180.0f);
+    
+    //scaling the particlesystem
+    rockettrail.xScale = 8.0;
+    rockettrail.yScale = 8.7;
+     rockettrail.zPosition = 2;
+    //rockettrail.targetNode = self.scene;
+    [rocket addChild:rockettrail];
+    rocket.position = CGPointMake(50+(self.frame.size.width / 4), CGRectGetMidY(self.frame));
+    rocket.zPosition = gameLayer;
+    [self addChild:rocket];
+}
+
+
+-(void)didMoveToView:(SKView *)view {
     FileSupport *pointFile = [[FileSupport alloc] init];
-    
+   // _WelcomeScreen = true;
     pointFile.fileName = @"FlySimPoint";
     
     NSMutableArray *pointArray = [pointFile  readObjectFromFile:@"FlySimPoint"];
@@ -154,68 +210,54 @@ static const uint32_t obstacleCategory =  0x1 << 1;
 
     
     if(_WelcomeScreen) {
+        
         [self startBackgroundMusic];
-    maxNumberOfStar = 10;
-    numberOfStar=0;
-    Life = 5;
-    lifeArray = [[NSMutableArray alloc] init];
+        
+        LEVEL = 1;
+        SpeedLevel = 5;
+        numberOfStar=1;
+        MAX_NUM_OF_STAR_PER_LEVEL = 100;
+        enemyRateo = 0.95;  //0.95
+        
+        numberOfStar=0;
+        Life = 5;
+        lifeArray = [[NSMutableArray alloc] init];
     
-    self.physicsWorld.gravity = CGVectorMake(0.0, 0.0);  //-5.0 per cadere
+        self.physicsWorld.gravity = CGVectorMake(0.0, 0.0);  //-5.0 per cadere
     
-    //Create SkyColor
-    _skyColor = [SKColor colorWithRed:113.0/255.0 green:197.0/255.0 blue:207.0/255.9 alpha:1.0];
-    [self setBackgroundColor:_skyColor];
-    [self initalizingScrollingBackground];
+        //Create SkyColor
+        _skyColor = [SKColor colorWithRed:113.0/255.0 green:197.0/255.0 blue:207.0/255.9 alpha:1.0];
+        [self setBackgroundColor:_skyColor];
+        [self initalizingScrollingBackground];
+        
+        [self addRocket];
+        
+     //   rocket = [[Rocket alloc] initWithPoint:CGPointMake(50+(self.frame.size.width / 4), CGRectGetMidY(self.frame)) mainFrame:self.frame];
+     //   rocket.mainFrameScene = self;
+     //   rocket.rocket.zPosition = gameLayer;
+     //   rocket.rockettrail.zPosition=2;
+     //   rocket.rockettrail.targetNode = self.scene;
+    
+        self.physicsWorld.contactDelegate = self;
 
-    rocket = [[Rocket alloc] initWithPoint:CGPointMake(50+(self.frame.size.width / 4), CGRectGetMidY(self.frame)) mainFrame:self.frame];
-    rocket.mainFrameScene = self;
-    rocket.rockettrail.targetNode = self.scene;
+        timerGenerator = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(generateNewStar) userInfo:nil repeats:NO];
     
-    //[self runAction: [SKAction repeatActionForever:makeStars]];
-    self.physicsWorld.contactDelegate = self;
-
-    timerGenerator = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(generateNewStar) userInfo:nil repeats:NO];
-
-    
-    // Add score label
-    
-    scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    scoreLabel.text = @"Score: 0";
-    scoreLabel.fontSize = 48;
-    scoreLabel.zPosition = 4;
-    scoreLabel.position = CGPointMake(CGRectGetMaxX(self.frame)-(scoreLabel.frame.size.width/2)-20,
+        scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        scoreLabel.text = @"Score: 0";
+        scoreLabel.fontSize = 48;
+        scoreLabel.zPosition = otherLayer;  //
+        scoreLabel.position = CGPointMake(CGRectGetMaxX(self.frame)-(scoreLabel.frame.size.width/2)-20,
                                       CGRectGetMaxY(self.frame)-scoreLabel.fontSize);
+        [scoreLabel setScale:1];
+        [self addChild:scoreLabel];
     
-    [scoreLabel setScale:1];
-    
-    [self addChild:scoreLabel];
-    
-    rocket.rocket.zPosition = 4;
-    [self addChild:rocket.rocket];
-    [self checkLife];
-        
-        
-    //JCImageJoystic
-    imageJoystick = [[JCImageJoystick alloc]initWithJoystickImage:(@"redStick.png") baseImage:@"stickbase.png"];
-    [imageJoystick setPosition:CGPointMake(imageJoystick.size.width+10, 100)];
-        
-    [imageJoystick setScale:3.0];
-    [imageJoystick setAlpha:0.5];
-        imageJoystick.zPosition=101;
-    [self addChild:imageJoystick];
-        
-    //JCButton
-        
-    normalButton = [[JCButton alloc] initWithButtonRadius:60 color:[SKColor blueColor] pressedColor:[SKColor clearColor] isTurbo:NO];
-    [normalButton setPosition:CGPointMake(CGRectGetMaxX(self.frame)-normalButton.frame.size.width,100)];
-    normalButton.zPosition = 100;
-        [normalButton setAlpha:0.3];
-        normalButton.zPosition = 101;
-    [self addChild:normalButton];
-        
-    float timing = skRand(15, 16);
-    timerPlanet = [NSTimer scheduledTimerWithTimeInterval:timing target:self selector:@selector(showPlanet) userInfo:nil repeats:NO];
-        
+      //  rocket.rocket.zPosition = otherLayer;
+      //  [self addChild:rocket.rocket];
+        [self checkLife];
+        [self addJoystick];
+
+        float timing = skRand(15, 16);
+        timerPlanet = [NSTimer scheduledTimerWithTimeInterval:timing target:self selector:@selector(showPlanet) userInfo:nil repeats:NO];
     }
     else
     {
@@ -228,13 +270,9 @@ static const uint32_t obstacleCategory =  0x1 << 1;
 
 - (void)checkButtons
 {
-    
     if (normalButton.wasPressed) {
         [self fire];
-        NSLog(@"Fire!!");
     }
-    
-    
 }
 
 - (float)convertFontSize:(float)fontSize
@@ -273,14 +311,10 @@ static const uint32_t obstacleCategory =  0x1 << 1;
     [explosion setParticleRotation:0];
     [explosion setParticleRotationRange:0];
     [explosion setParticleRotationSpeed:0];
-    
     [explosion setParticleColorBlendFactor:1];
     [explosion setParticleColorBlendFactorRange:0];
     [explosion setParticleColorBlendFactorSpeed:0];
     [explosion setParticleBlendMode:SKBlendModeAdd];
-    
-    //add this node to parent node
-    [self addChild:explosion];
     }
     
     if([type isEqualToString:@"ufo"]) {
@@ -304,16 +338,10 @@ static const uint32_t obstacleCategory =  0x1 << 1;
         [explosion setParticleRotation:0];
         [explosion setParticleRotationRange:0];
         [explosion setParticleRotationSpeed:0];
-        
         [explosion setParticleColorBlendFactor:1];
         [explosion setParticleColorBlendFactorRange:0];
         [explosion setParticleColorBlendFactorSpeed:0];
         [explosion setParticleBlendMode:SKBlendModeAdd];
-        
-        //add this node to parent node
-        [self addChild:explosion];
-        
-        return explosion;
     }
     
     
@@ -338,18 +366,14 @@ static const uint32_t obstacleCategory =  0x1 << 1;
         [explosion setParticleRotation:0];
         [explosion setParticleRotationRange:0];
         [explosion setParticleRotationSpeed:0];
-        
         [explosion setParticleColorBlendFactor:1];
         [explosion setParticleColorBlendFactorRange:0];
         [explosion setParticleColorBlendFactorSpeed:0];
         [explosion setParticleBlendMode:SKBlendModeAdd];
-        
         //add this node to parent node
-        [self addChild:explosion];
-        
-        return explosion;
     }
-
+    [self addChild:explosion];
+    explosion.zPosition = gameLayer;
     return explosion;
 }
 
@@ -366,7 +390,7 @@ static const uint32_t obstacleCategory =  0x1 << 1;
     missile.physicsBody.contactTestBitMask =  obstacleCategory;
     missile.physicsBody.collisionBitMask = 0;
     missile.name = @"missile";
-    
+    missile.zPosition = gameLayer;
     NSString *firePath = [[NSBundle mainBundle] pathForResource:@"Projectile" ofType:@"sks"];
     SKEmitterNode *fire = [NSKeyedUnarchiver unarchiveObjectWithFile:firePath];
     
@@ -391,11 +415,11 @@ static const uint32_t obstacleCategory =  0x1 << 1;
 
 -(void)fire {
     // 1 - Choose one of the touches to work with
-    CGPoint location = rocket.rocket.position;
+    CGPoint location = rocket.position;
     
     // 2 - Set up initial location of projectile
     SKSpriteNode *projectile = [self newMissile];
-    projectile.position = rocket.rocket.position;
+    projectile.position = rocket.position;
     
     // 3- Determine offset of location to projectile
     CGPoint offset = rwSub(location, projectile.position);
@@ -457,7 +481,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
         SKLabelNode *gameOverLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         gameOverLabel.text = @"Level UP!";
         gameOverLabel.fontSize = 48;
-        gameOverLabel.zPosition = 4;
+        gameOverLabel.zPosition = otherLayer;
         gameOverLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                              CGRectGetMidY(self.frame));
         
@@ -486,7 +510,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     SKSpriteNode *star = [[SKSpriteNode alloc] initWithImageNamed:@"spaceman.png"];
     star.xScale = 0.5;
     star.yScale = 0.5;
-    star.zPosition = 101;
+    star.zPosition = gameLayer;
     star.position = CGPointMake(self.size.width, skRand(0, self.size.height-20));
     star.name = @"star";
     star.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:0.5*star.size.width];
@@ -532,10 +556,10 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     // It will then raise up a bit as it keeps going and finally drop to the target at x:300 y:0
     CGPathAddCurveToPoint(path, NULL,
                           star.position.x-20, star.position.y,
-                          rocket.rocket.position.x, rocket.rocket.position.y,
-                          -1,rocket.rocket.position.y);  //
+                          rocket.position.x, rocket.position.y,
+                          -1,rocket.position.y);  //
     
-    float deltaX = (star.position.x - rocket.rocket.position.x);
+    float deltaX = (star.position.x - rocket.position.x);
     deltaX = (deltaX)/self.size.width;
     
     // Create an action based on this curve. oritentToPath will make the arrows tip point up and down in the correct spots.
@@ -578,7 +602,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     
     //numberOfStar++;
     numberOfUfo++;
-    star.zPosition = 101;
+    star.zPosition = gameLayer;
     [self addChild:star];
 }
 
@@ -663,7 +687,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
         if([contact.bodyB.node.name isEqualToString:@"missile"]) {                  //Kill the astronaut
             SKEmitterNode *ex = [self newExplosion: contact.bodyA.node.name];
             //set the position of contact
-            ex.zPosition = 101;
+            //ex.zPosition = 101;
             ex.position = contact.bodyA.node.position;
             [contact.bodyB.node removeFromParent];                          //Remove the missile
         }
@@ -680,7 +704,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
             [self runAction:explosion_ufo];
             
             SKEmitterNode *fire = [self newBubble];
-            fire.position = rocket.rocket.position;
+            fire.position = rocket.position;
             [self addChild:fire];
 
             
@@ -721,7 +745,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
         if([contact.bodyB.node.name isEqualToString:@"missile"]) {
             ex = [self newExplosion: contact.bodyA.node.name];
             //set the position of contact
-            ex.zPosition = 101;
+           // ex.zPosition = 101;
             ex.position = contact.bodyA.node.position;
             [contact.bodyB.node removeFromParent];
         }
@@ -744,6 +768,8 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     Life--;
     if(Life<=0)
     {
+        [_backgroundAudioPlayer stop];
+        _backgroundAudioPlayer = nil;
         WecomeScreen *mainScene = [[WecomeScreen alloc] initWithSize:self.size];
         mainScene.GameOver = true;
         SKTransition *transition = [SKTransition flipVerticalWithDuration:0.5];
@@ -770,7 +796,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     life1.position = CGPointMake(x_master-(d_x-20),
                                 y_master+d_y);
     life1.zRotation = M_PI/2;
-    life1.zPosition=100;
+    life1.zPosition=otherLayer;
     life1.name = @"life1";
 
 
@@ -778,7 +804,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     life2.position = CGPointMake(x_master-(d_x+10),
                                  y_master+d_y);
     life2.zRotation = M_PI/2;
-    life2.zPosition=100;
+    life2.zPosition=otherLayer;
     life2.name = @"life2";
 
   
@@ -786,7 +812,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     life3.position = CGPointMake(x_master-(d_x+40),
                                  y_master+d_y);
     life3.zRotation = M_PI/2;
-    life3.zPosition=100;
+    life3.zPosition=otherLayer;
     life3.name = @"life3";
     
  
@@ -794,7 +820,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     life4.position = CGPointMake(x_master-(d_x+70),
                                  y_master+d_y);
     life4.zRotation = M_PI/2;
-    life4.zPosition=100;
+    life4.zPosition=otherLayer;
     life4.name = @"life4";
     
  
@@ -802,7 +828,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     life5.position = CGPointMake(x_master-(d_x+100),
                                  y_master+d_y);
     life5.zRotation = M_PI/2;
-    life5.zPosition=100;
+    life5.zPosition=otherLayer;
     life5.name = @"life5";
     
     
@@ -873,14 +899,14 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     }
     
     [self enumerateChildNodesWithName:@"ufo" usingBlock:^(SKNode *node, BOOL *stop) {
-        if(node.position.x>rocket.rocket.position.x) {
+        if(node.position.x>rocket.position.x) {
             [self followShip:(SKSpriteNode*)node];
-            NSLog(@"Follow node");
+            NSLog(@"Follow node: %f",rocket.zPosition);
         }
     }];
     
     timerGenerator = nil;
-    float timing = skRand(0.2, 1);
+    float timing = skRand(0.2, 2);
     timerGenerator = [NSTimer scheduledTimerWithTimeInterval:timing target:self selector:@selector(generateNewStar) userInfo:nil repeats:NO];
 }
 
@@ -922,43 +948,43 @@ static inline CGPoint rwNormalize(CGPoint a) {
     if(oldy < imageJoystick.y)
     {
         SKAction *actionMoveUp = [SKAction moveByX:0 y:5 duration:.2];
-        [rocket.rocket runAction:actionMoveUp];
+        [rocket runAction:actionMoveUp];
     }
     else if(oldy > imageJoystick.y)
     {
         SKAction *actionMoveDown = [SKAction moveByX:0 y:-5 duration:.2];
-        [rocket.rocket runAction:actionMoveDown];
+        [rocket runAction:actionMoveDown];
 
     }
     
     if(oldx < imageJoystick.x)
     {
         SKAction *actionMoveFw = [SKAction moveByX:5 y:0 duration:.2];
-        [rocket.rocket runAction:actionMoveFw];
+        [rocket runAction:actionMoveFw];
     }
     else if(oldx > imageJoystick.x)
     {
         SKAction *actionMoveRew = [SKAction moveByX:-5 y:0 duration:.2];
-        [rocket.rocket runAction:actionMoveRew];
+        [rocket runAction:actionMoveRew];
         
     }
     
-    if(rocket.rocket.position.x<0) //|| rocket.rocket.position.x>self.frame.size.width)
+    if(rocket.position.x<0) //|| rocket.rocket.position.x>self.frame.size.width)
     {
-        rocket.rocket.position = CGPointMake(0,rocket.rocket.position.y);
+        rocket.position = CGPointMake(0,rocket.position.y);
     }
-    if(rocket.rocket.position.x>self.frame.size.width)
+    if(rocket.position.x>self.frame.size.width)
     {
-        rocket.rocket.position = CGPointMake(self.frame.size.width,rocket.rocket.position.y);
+        rocket.position = CGPointMake(self.frame.size.width,rocket.position.y);
     }
     
-    if(rocket.rocket.position.y<0) //|| rocket.rocket.position.x>self.frame.size.width)
+    if(rocket.position.y<0) //|| rocket.rocket.position.x>self.frame.size.width)
     {
-        rocket.rocket.position = CGPointMake(rocket.rocket.position.x,0);
+        rocket.position = CGPointMake(rocket.position.x,0);
     }
-    if(rocket.rocket.position.y>self.frame.size.height)
+    if(rocket.position.y>self.frame.size.height)
     {
-        rocket.rocket.position = CGPointMake(rocket.rocket.position.x,self.frame.size.height);
+        rocket.position = CGPointMake(rocket.position.x,self.frame.size.height);
     }
     oldx = imageJoystick.x;
     oldy = imageJoystick.y;

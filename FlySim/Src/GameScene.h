@@ -15,7 +15,7 @@
 @interface GameScene : SKScene <SKPhysicsContactDelegate> {
     CFTimeInterval _dt;
     CFTimeInterval _lastUpdateTime;
-    float maxNumberOfStar;
+   // float maxNumberOfStar;
     float numberOfStar;
     float numberOfUfo;
     BOOL stopStar;

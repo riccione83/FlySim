@@ -14,7 +14,8 @@ static const uint32_t shipCategory =  0x1 << 0;
 static const uint32_t obstacleCategory =  0x1 << 1;
 
 @implementation Rocket
-
+@synthesize rocket;
+@synthesize rockettrail;
 
 
 - (id)init {
@@ -28,36 +29,37 @@ static const uint32_t obstacleCategory =  0x1 << 1;
     
         mainFrame = _mainFrame;
         
-    SKTexture *rocketTexture1 = [SKTexture textureWithImageNamed:@"rocket_1.png"];
-    rocketTexture1.filteringMode = SKTextureFilteringNearest;
+        NSString *firePath = [[NSBundle mainBundle] pathForResource:@"Fire" ofType:@"sks"];
+        SKEmitterNode *fire = [NSKeyedUnarchiver unarchiveObjectWithFile:firePath];
+        
+        SKTexture *rocketTexture1 = [SKTexture textureWithImageNamed:@"rocket_1.png"];
+        rocketTexture1.filteringMode = SKTextureFilteringNearest;
     
-        _rocket = [SKSpriteNode spriteNodeWithTexture:rocketTexture1];
-        [_rocket setScale:0.2];
-        _rocket.position = point;
+        rocket = [SKSpriteNode spriteNodeWithTexture:rocketTexture1];
+        [rocket setScale:0.2];
+        rocket.position = point;
         //Attivare movimento
     
-        _rocket.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_rocket.size.height/2];
-        _rocket.physicsBody.categoryBitMask = shipCategory;
-        _rocket.physicsBody.dynamic = YES;
-        _rocket.physicsBody.contactTestBitMask = obstacleCategory;
-        _rocket.physicsBody.collisionBitMask = 0;
-        _rocket.name = @"ship";
+        rocket.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:rocket.size.height/2];
+        rocket.physicsBody.categoryBitMask = shipCategory;
+        rocket.physicsBody.dynamic = YES;
+        rocket.physicsBody.contactTestBitMask = obstacleCategory;
+        rocket.physicsBody.collisionBitMask = 0;
+        rocket.name = @"ship";
         
-        _rockettrail = [self newFireEmitter];
+        rockettrail = fire;
         
         //the y-position needs to be slightly behind the spaceship
-        _rockettrail.position = CGPointMake(-390, 0.0);
+        rockettrail.position = CGPointMake(-390, 0.0);
         
-        _rockettrail.emissionAngle =  DEG2RAD(170.0f);
+        rockettrail.emissionAngle =  DEG2RAD(180.0f);
         
         //scaling the particlesystem
-        _rockettrail.xScale = 10.0;
-        _rockettrail.yScale = 10.7;
+        rockettrail.xScale = 8.0;
+        rockettrail.yScale = 8.7;
+       // rockettrail.zPosition = 2;
         
-        //changing the targetnode from spaceship to scene so that it gets influenced by movement
-        //rockettrail.targetNode = _mainFrameScene.scene;
-        
-        [_rocket addChild:_rockettrail];
+        [rocket addChild:rockettrail];
 
     }
     return self;
@@ -73,17 +75,17 @@ static const uint32_t obstacleCategory =  0x1 << 1;
 
 -(void)moveUp{
      actionMoveUp = [SKAction moveByX:0 y:30 duration:.2];
-    [_rocket runAction:actionMoveUp];
+    [rocket runAction:actionMoveUp];
 }
 
 
 -(void)moveDown{
     actionMoveDown = [SKAction moveByX:0 y:-30 duration:.2];
-    [_rocket runAction:actionMoveDown];
+    [rocket runAction:actionMoveDown];
 }
 
 -(void)ImpulseUp {
-     [_rocket.physicsBody applyImpulse:CGVectorMake(0, 80)];
+     [rocket.physicsBody applyImpulse:CGVectorMake(0, 80)];
 }
 
 -(void)rocketUp {
@@ -94,6 +96,6 @@ static const uint32_t obstacleCategory =  0x1 << 1;
     
     SKAction *up = [SKAction repeatActionForever:[SKAction animateWithTextures:@[rocketTexture1,rocketTexture2] timePerFrame:0.2]];
     
-    [_rocket runAction:up];
+    [rocket runAction:up];
 }
 @end
