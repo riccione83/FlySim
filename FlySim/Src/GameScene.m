@@ -78,7 +78,7 @@ static const int maxNumberOfStar = 10;
     planetShowed = true;
     NSString *planetName;
     float rand = skRand(0, 3);
-    float scale = skRand(0.4, 3);
+    float scale = skRand(1, 4);
     float yPosition = skRand(80, (self.size.height/3)*2);
     
     
@@ -92,20 +92,22 @@ static const int maxNumberOfStar = 10;
     SKTexture *planet = [SKTexture textureWithImageNamed:planetName];
     planet.filteringMode = SKTextureFilteringNearest;
     
-    SKAction *moveGroudSprite = [SKAction moveByX:-(self.size.width+(planet.size.width*2)) y:0 duration:5];
-
+    SKAction *moveGroudSprite = [SKAction moveByX:-(self.size.width+(planet.size.width*scale)) y:0 duration:15];
+    SKAction *removeNode = [SKAction removeFromParent];
+    SKAction *planetAction = [SKAction  sequence:@[moveGroudSprite, removeNode]];
+    
     SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:planet];
     [sprite setScale:scale];
-    sprite.position = CGPointMake(self.size.width+planet.size.width, yPosition);
+    sprite.position = CGPointMake(self.size.width+planet.size.width+100, yPosition);
     sprite.zPosition = backgroundLayer;
     sprite.alpha = 1;
     sprite.name = @"planet";
     [self addChild:sprite];
-    [sprite runAction:moveGroudSprite];
+    [sprite runAction:planetAction];
     
     NSLog(@"Planet: %f Rocket:%f",sprite.zPosition,rocket.zPosition);
     timerPlanet = nil;
-    float timing = skRand(11, 35);
+    float timing = skRand(16, 35);
     timerPlanet = [NSTimer scheduledTimerWithTimeInterval:timing target:self selector:@selector(showPlanet) userInfo:nil repeats:NO];
 }
 
