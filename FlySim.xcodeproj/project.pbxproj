@@ -35,7 +35,6 @@
 		93244F301A4D61620047D605 /* planet_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F281A4D61620047D605 /* planet_6.png */; };
 		93244F311A4D61620047D605 /* planet_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F291A4D61620047D605 /* planet_7.png */; };
 		93244F321A4D61620047D605 /* planet_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F2A1A4D61620047D605 /* planet_8.png */; };
-		93244F361A4D61680047D605 /* rock_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93244F331A4D61680047D605 /* rock_1.jpg */; };
 		93244F371A4D61680047D605 /* rock_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F341A4D61680047D605 /* rock_2.png */; };
 		93244F381A4D61680047D605 /* rock_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F351A4D61680047D605 /* rock_3.png */; };
 		93244F3C1A4D61700047D605 /* enemy_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F391A4D61700047D605 /* enemy_1.png */; };
@@ -47,6 +46,7 @@
 		93A268D519F7A0A1003335BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A268D319F7A0A1003335BE /* Main.storyboard */; };
 		93A268D719F7A0A1003335BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A268D619F7A0A1003335BE /* Images.xcassets */; };
 		93A268E619F7A0A1003335BE /* FlySimTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268E519F7A0A1003335BE /* FlySimTests.m */; };
+		93A44FAC1A4DF75500123CED /* rock_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A44FAB1A4DF75500123CED /* rock_1.png */; };
 		93E8B21C1A4322F700C95D6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E8B2111A4322F700C95D6C /* AppDelegate.m */; };
 		93E8B21D1A4322F700C95D6C /* FileSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E8B2131A4322F700C95D6C /* FileSupport.m */; };
 		93E8B21E1A4322F700C95D6C /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E8B2151A4322F700C95D6C /* GameScene.m */; };
@@ -104,7 +104,6 @@
 		93244F281A4D61620047D605 /* planet_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_6.png; path = Images/planet_6.png; sourceTree = "<group>"; };
 		93244F291A4D61620047D605 /* planet_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_7.png; path = Images/planet_7.png; sourceTree = "<group>"; };
 		93244F2A1A4D61620047D605 /* planet_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_8.png; path = Images/planet_8.png; sourceTree = "<group>"; };
-		93244F331A4D61680047D605 /* rock_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rock_1.jpg; path = Images/rock_1.jpg; sourceTree = "<group>"; };
 		93244F341A4D61680047D605 /* rock_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rock_2.png; path = Images/rock_2.png; sourceTree = "<group>"; };
 		93244F351A4D61680047D605 /* rock_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rock_3.png; path = Images/rock_3.png; sourceTree = "<group>"; };
 		93244F391A4D61700047D605 /* enemy_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy_1.png; path = Images/enemy_1.png; sourceTree = "<group>"; };
@@ -121,6 +120,7 @@
 		93A268DF19F7A0A1003335BE /* FlySimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlySimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A268E419F7A0A1003335BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A268E519F7A0A1003335BE /* FlySimTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlySimTests.m; sourceTree = "<group>"; };
+		93A44FAB1A4DF75500123CED /* rock_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rock_1.png; path = Images/rock_1.png; sourceTree = "<group>"; };
 		93E8B2101A4322F700C95D6C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Src/AppDelegate.h; sourceTree = "<group>"; };
 		93E8B2111A4322F700C95D6C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Src/AppDelegate.m; sourceTree = "<group>"; };
 		93E8B2121A4322F700C95D6C /* FileSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileSupport.h; path = Src/FileSupport.h; sourceTree = "<group>"; };
@@ -264,11 +264,11 @@
 		93A268EF19F7A5C9003335BE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				93A44FAB1A4DF75500123CED /* rock_1.png */,
 				93244F411A4D66E40047D605 /* enemy_2.png */,
 				93244F3F1A4D63550047D605 /* planet_5.png */,
 				93244F391A4D61700047D605 /* enemy_1.png */,
 				93244F3B1A4D61700047D605 /* enemy_3.png */,
-				93244F331A4D61680047D605 /* rock_1.jpg */,
 				93244F341A4D61680047D605 /* rock_2.png */,
 				93244F351A4D61680047D605 /* rock_3.png */,
 				93244F231A4D61620047D605 /* planet_1.png */,
@@ -417,7 +417,7 @@
 				93244F321A4D61620047D605 /* planet_8.png in Resources */,
 				9322F3DE1A3D803E003B6598 /* ground.png in Resources */,
 				9322F3E61A3D803E003B6598 /* space.jpeg in Resources */,
-				93244F361A4D61680047D605 /* rock_1.jpg in Resources */,
+				93A44FAC1A4DF75500123CED /* rock_1.png in Resources */,
 				93244F2E1A4D61620047D605 /* planet_4.png in Resources */,
 				9322F3E31A3D803E003B6598 /* rocket_1.png in Resources */,
 				93244F2B1A4D61620047D605 /* planet_1.png in Resources */,
