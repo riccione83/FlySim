@@ -3,10 +3,40 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[GameScene followShip:]:GameScene.m">
+         contextName = "-[GameScene setShipForCollision]:GameScene.m">
          <PersistentStrings>
             <PersistentString
-               value = "SpeedLevel*deltaX">
+               value = "rocket.physicsBody.categoryBitMask">
+            </PersistentString>
+            <PersistentString
+               value = "rocket.physicsBody.contactTestBitMask">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GameScene checkLife]:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "life1.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GameScene addUfo]:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "ufo.enemy.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GameScene didBeginContact:]:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "contact.bodyB.node.name">
+            </PersistentString>
+            <PersistentString
+               value = "contact.bodyA.node.name">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -19,10 +49,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[GameScene checkLife]:GameScene.m">
+         contextName = "-[GameScene enemyFire]:GameScene.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[GameScene followShip:]:GameScene.m">
          <PersistentStrings>
             <PersistentString
-               value = "life1.position">
+               value = "SpeedLevel*deltaX">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GameScene addRocket]:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "rocket.physicsBody.categoryBitMask">
+            </PersistentString>
+            <PersistentString
+               value = "rocket.physicsBody.contactTestBitMask">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -18,9 +18,6 @@
 		9322F3DC1A3D803E003B6598 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322F3CC1A3D803E003B6598 /* background.png */; };
 		9322F3DD1A3D803E003B6598 /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322F3CD1A3D803E003B6598 /* bokeh.png */; };
 		9322F3DE1A3D803E003B6598 /* ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322F3CE1A3D803E003B6598 /* ground.png */; };
-		9322F3DF1A3D803E003B6598 /* planet_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322F3CF1A3D803E003B6598 /* planet_1.png */; };
-		9322F3E01A3D803E003B6598 /* planet_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322F3D01A3D803E003B6598 /* planet_2.png */; };
-		9322F3E11A3D803E003B6598 /* planet_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322F3D11A3D803E003B6598 /* planet_3.png */; };
 		9322F3E21A3D803E003B6598 /* redStick.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322F3D21A3D803E003B6598 /* redStick.png */; };
 		9322F3E31A3D803E003B6598 /* rocket_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322F3D31A3D803E003B6598 /* rocket_1.png */; };
 		9322F3E41A3D803E003B6598 /* rocket_dwn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322F3D41A3D803E003B6598 /* rocket_dwn.png */; };
@@ -31,6 +28,21 @@
 		9322F3E91A3D803E003B6598 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322F3D91A3D803E003B6598 /* Star.png */; };
 		9322F3EA1A3D803E003B6598 /* stickbase.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322F3DA1A3D803E003B6598 /* stickbase.png */; };
 		9322F3EB1A3D803E003B6598 /* ufo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9322F3DB1A3D803E003B6598 /* ufo.png */; };
+		93244F2B1A4D61620047D605 /* planet_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F231A4D61620047D605 /* planet_1.png */; };
+		93244F2C1A4D61620047D605 /* planet_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F241A4D61620047D605 /* planet_2.png */; };
+		93244F2D1A4D61620047D605 /* planet_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F251A4D61620047D605 /* planet_3.png */; };
+		93244F2E1A4D61620047D605 /* planet_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F261A4D61620047D605 /* planet_4.png */; };
+		93244F301A4D61620047D605 /* planet_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F281A4D61620047D605 /* planet_6.png */; };
+		93244F311A4D61620047D605 /* planet_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F291A4D61620047D605 /* planet_7.png */; };
+		93244F321A4D61620047D605 /* planet_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F2A1A4D61620047D605 /* planet_8.png */; };
+		93244F361A4D61680047D605 /* rock_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93244F331A4D61680047D605 /* rock_1.jpg */; };
+		93244F371A4D61680047D605 /* rock_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F341A4D61680047D605 /* rock_2.png */; };
+		93244F381A4D61680047D605 /* rock_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F351A4D61680047D605 /* rock_3.png */; };
+		93244F3C1A4D61700047D605 /* enemy_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F391A4D61700047D605 /* enemy_1.png */; };
+		93244F3E1A4D61700047D605 /* enemy_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F3B1A4D61700047D605 /* enemy_3.png */; };
+		93244F401A4D63550047D605 /* planet_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F3F1A4D63550047D605 /* planet_5.png */; };
+		93244F421A4D66E40047D605 /* enemy_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F411A4D66E40047D605 /* enemy_2.png */; };
+		93244F451A4D680E0047D605 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93244F441A4D680E0047D605 /* Enemy.m */; };
 		93A268C719F7A0A1003335BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268C619F7A0A1003335BE /* main.m */; };
 		93A268D519F7A0A1003335BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A268D319F7A0A1003335BE /* Main.storyboard */; };
 		93A268D719F7A0A1003335BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A268D619F7A0A1003335BE /* Images.xcassets */; };
@@ -75,9 +87,6 @@
 		9322F3CC1A3D803E003B6598 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Images/background.png; sourceTree = "<group>"; };
 		9322F3CD1A3D803E003B6598 /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bokeh.png; path = Images/bokeh.png; sourceTree = "<group>"; };
 		9322F3CE1A3D803E003B6598 /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ground.png; path = Images/ground.png; sourceTree = "<group>"; };
-		9322F3CF1A3D803E003B6598 /* planet_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_1.png; path = Images/planet_1.png; sourceTree = "<group>"; };
-		9322F3D01A3D803E003B6598 /* planet_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_2.png; path = Images/planet_2.png; sourceTree = "<group>"; };
-		9322F3D11A3D803E003B6598 /* planet_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_3.png; path = Images/planet_3.png; sourceTree = "<group>"; };
 		9322F3D21A3D803E003B6598 /* redStick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redStick.png; path = Images/redStick.png; sourceTree = "<group>"; };
 		9322F3D31A3D803E003B6598 /* rocket_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rocket_1.png; path = Images/rocket_1.png; sourceTree = "<group>"; };
 		9322F3D41A3D803E003B6598 /* rocket_dwn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rocket_dwn.png; path = Images/rocket_dwn.png; sourceTree = "<group>"; };
@@ -88,6 +97,22 @@
 		9322F3D91A3D803E003B6598 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Star.png; path = Images/Star.png; sourceTree = "<group>"; };
 		9322F3DA1A3D803E003B6598 /* stickbase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stickbase.png; path = Images/stickbase.png; sourceTree = "<group>"; };
 		9322F3DB1A3D803E003B6598 /* ufo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ufo.png; path = Images/ufo.png; sourceTree = "<group>"; };
+		93244F231A4D61620047D605 /* planet_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_1.png; path = Images/planet_1.png; sourceTree = "<group>"; };
+		93244F241A4D61620047D605 /* planet_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_2.png; path = Images/planet_2.png; sourceTree = "<group>"; };
+		93244F251A4D61620047D605 /* planet_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_3.png; path = Images/planet_3.png; sourceTree = "<group>"; };
+		93244F261A4D61620047D605 /* planet_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_4.png; path = Images/planet_4.png; sourceTree = "<group>"; };
+		93244F281A4D61620047D605 /* planet_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_6.png; path = Images/planet_6.png; sourceTree = "<group>"; };
+		93244F291A4D61620047D605 /* planet_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_7.png; path = Images/planet_7.png; sourceTree = "<group>"; };
+		93244F2A1A4D61620047D605 /* planet_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_8.png; path = Images/planet_8.png; sourceTree = "<group>"; };
+		93244F331A4D61680047D605 /* rock_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rock_1.jpg; path = Images/rock_1.jpg; sourceTree = "<group>"; };
+		93244F341A4D61680047D605 /* rock_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rock_2.png; path = Images/rock_2.png; sourceTree = "<group>"; };
+		93244F351A4D61680047D605 /* rock_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rock_3.png; path = Images/rock_3.png; sourceTree = "<group>"; };
+		93244F391A4D61700047D605 /* enemy_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy_1.png; path = Images/enemy_1.png; sourceTree = "<group>"; };
+		93244F3B1A4D61700047D605 /* enemy_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy_3.png; path = Images/enemy_3.png; sourceTree = "<group>"; };
+		93244F3F1A4D63550047D605 /* planet_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_5.png; path = Images/planet_5.png; sourceTree = "<group>"; };
+		93244F411A4D66E40047D605 /* enemy_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy_2.png; path = Images/enemy_2.png; sourceTree = "<group>"; };
+		93244F431A4D680E0047D605 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		93244F441A4D680E0047D605 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
 		93A268C119F7A0A1003335BE /* FlySim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlySim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A268C519F7A0A1003335BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A268C619F7A0A1003335BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -239,12 +264,23 @@
 		93A268EF19F7A5C9003335BE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				93244F411A4D66E40047D605 /* enemy_2.png */,
+				93244F3F1A4D63550047D605 /* planet_5.png */,
+				93244F391A4D61700047D605 /* enemy_1.png */,
+				93244F3B1A4D61700047D605 /* enemy_3.png */,
+				93244F331A4D61680047D605 /* rock_1.jpg */,
+				93244F341A4D61680047D605 /* rock_2.png */,
+				93244F351A4D61680047D605 /* rock_3.png */,
+				93244F231A4D61620047D605 /* planet_1.png */,
+				93244F241A4D61620047D605 /* planet_2.png */,
+				93244F251A4D61620047D605 /* planet_3.png */,
+				93244F261A4D61620047D605 /* planet_4.png */,
+				93244F281A4D61620047D605 /* planet_6.png */,
+				93244F291A4D61620047D605 /* planet_7.png */,
+				93244F2A1A4D61620047D605 /* planet_8.png */,
 				9322F3CC1A3D803E003B6598 /* background.png */,
 				9322F3CD1A3D803E003B6598 /* bokeh.png */,
 				9322F3CE1A3D803E003B6598 /* ground.png */,
-				9322F3CF1A3D803E003B6598 /* planet_1.png */,
-				9322F3D01A3D803E003B6598 /* planet_2.png */,
-				9322F3D11A3D803E003B6598 /* planet_3.png */,
 				9322F3D21A3D803E003B6598 /* redStick.png */,
 				9322F3D31A3D803E003B6598 /* rocket_1.png */,
 				9322F3D41A3D803E003B6598 /* rocket_dwn.png */,
@@ -274,6 +310,8 @@
 				93E8B2191A4322F700C95D6C /* Rocket.m */,
 				93E8B21A1A4322F700C95D6C /* WelcomeScreen.h */,
 				93E8B21B1A4322F700C95D6C /* WelcomeScreen.m */,
+				93244F431A4D680E0047D605 /* Enemy.h */,
+				93244F441A4D680E0047D605 /* Enemy.m */,
 			);
 			name = Src;
 			sourceTree = "<group>";
@@ -359,29 +397,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93244F3E1A4D61700047D605 /* enemy_3.png in Resources */,
 				9322F3C91A3D8030003B6598 /* astro.sks in Resources */,
 				9322F3E41A3D803E003B6598 /* rocket_dwn.png in Resources */,
 				9322F3E71A3D803E003B6598 /* spaceman.png in Resources */,
 				9322F3EA1A3D803E003B6598 /* stickbase.png in Resources */,
 				9322F3DC1A3D803E003B6598 /* background.png in Resources */,
 				9322F3EB1A3D803E003B6598 /* ufo.png in Resources */,
+				93244F401A4D63550047D605 /* planet_5.png in Resources */,
 				9322F3E51A3D803E003B6598 /* rocket_up.png in Resources */,
+				93244F421A4D66E40047D605 /* enemy_2.png in Resources */,
+				93244F301A4D61620047D605 /* planet_6.png in Resources */,
 				9322F3E81A3D803E003B6598 /* spark.png in Resources */,
+				93244F2C1A4D61620047D605 /* planet_2.png in Resources */,
 				9322F3E21A3D803E003B6598 /* redStick.png in Resources */,
-				9322F3DF1A3D803E003B6598 /* planet_1.png in Resources */,
+				93244F3C1A4D61700047D605 /* enemy_1.png in Resources */,
 				9322F3DD1A3D803E003B6598 /* bokeh.png in Resources */,
 				9322F3C41A3D8018003B6598 /* GameScene.sks in Resources */,
-				9322F3E11A3D803E003B6598 /* planet_3.png in Resources */,
+				93244F321A4D61620047D605 /* planet_8.png in Resources */,
 				9322F3DE1A3D803E003B6598 /* ground.png in Resources */,
 				9322F3E61A3D803E003B6598 /* space.jpeg in Resources */,
+				93244F361A4D61680047D605 /* rock_1.jpg in Resources */,
+				93244F2E1A4D61620047D605 /* planet_4.png in Resources */,
 				9322F3E31A3D803E003B6598 /* rocket_1.png in Resources */,
+				93244F2B1A4D61620047D605 /* planet_1.png in Resources */,
+				93244F381A4D61680047D605 /* rock_3.png in Resources */,
+				93244F371A4D61680047D605 /* rock_2.png in Resources */,
 				9322F3C51A3D8018003B6598 /* WelcomeScreen.sks in Resources */,
 				9322F3E91A3D803E003B6598 /* Star.png in Resources */,
 				93A268D719F7A0A1003335BE /* Images.xcassets in Resources */,
-				9322F3E01A3D803E003B6598 /* planet_2.png in Resources */,
+				93244F2D1A4D61620047D605 /* planet_3.png in Resources */,
 				9322F3CA1A3D8030003B6598 /* Fire.sks in Resources */,
 				9322F3CB1A3D8030003B6598 /* Projectile.sks in Resources */,
 				93A268D519F7A0A1003335BE /* Main.storyboard in Resources */,
+				93244F311A4D61620047D605 /* planet_7.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +457,7 @@
 				9322F3BF1A3D8007003B6598 /* JCButton.m in Sources */,
 				93E8B21C1A4322F700C95D6C /* AppDelegate.m in Sources */,
 				93E8B2211A4322F700C95D6C /* WelcomeScreen.m in Sources */,
+				93244F451A4D680E0047D605 /* Enemy.m in Sources */,
 				93E8B21D1A4322F700C95D6C /* FileSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

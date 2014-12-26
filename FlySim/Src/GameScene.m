@@ -9,6 +9,7 @@
 #import "GameScene.h"
 //#import "Rocket.h"
 #import "WelcomeScreen.h"
+#import "Enemy.h"
 @import AVFoundation;
 
 #define DEG2RAD(degrees) (degrees * 0.01745327) // degrees * pi over 180
@@ -77,34 +78,61 @@ static const int maxNumberOfStar = 10;
     //Create Groud
     planetShowed = true;
     NSString *planetName;
-    float rand = skRand(0, 3);
-    float scale = skRand(1, 4);
+    float rand = skRand(0, 11);
+    float scale = skRand(1, 2);
     float yPosition = skRand(80, (self.size.height/3)*2);
-    
     
     if(rand>=0 && rand<1)
         planetName = @"planet_1.png";
     else if(rand>=1 && rand<2)
         planetName = @"planet_2.png";
-    else if (rand>2)
+    else if(rand>=2 && rand<3)
         planetName = @"planet_3.png";
+    else if(rand>=3 && rand<4)
+        planetName = @"planet_4.png";
+    else if(rand>=4 && rand<5)
+        planetName = @"planet_5.png";
+    else if(rand>=5 && rand<6)
+        planetName = @"planet_6.png";
+    else if(rand>=6 && rand<7)
+        planetName = @"planet_7.png";
+    else if(rand>=7 && rand<8)
+        planetName = @"planet_8.png";
+    else if(rand>=8 && rand<9)
+        planetName = @"rock_1.png";
+    else if(rand>=9 && rand<10)
+        planetName = @"rock_2.png";
+    else if(rand>=10 && rand<11)
+        planetName = @"rock_3.png";
+    
+    float rot = skRand(0, 2);
+    SKAction *oneRevolution;
+    
+    if(rot<=1)
+        oneRevolution = [SKAction rotateByAngle:-M_PI*rot duration: 8.0];
+    else
+        oneRevolution = [SKAction rotateByAngle:M_PI*rot duration: 8.0];
+    SKAction *repeat = [SKAction repeatActionForever:oneRevolution];
     
     SKTexture *planet = [SKTexture textureWithImageNamed:planetName];
     planet.filteringMode = SKTextureFilteringNearest;
     
-    SKAction *moveGroudSprite = [SKAction moveByX:-(self.size.width+(planet.size.width*scale)) y:0 duration:15];
+    SKAction *moveGroudSprite = [SKAction moveByX:-(self.size.width+(planet.size.width*scale)+200) y:0 duration:15];
     SKAction *removeNode = [SKAction removeFromParent];
     SKAction *planetAction = [SKAction  sequence:@[moveGroudSprite, removeNode]];
+
     
     SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:planet];
     [sprite setScale:scale];
-    sprite.position = CGPointMake(self.size.width+planet.size.width+100, yPosition);
+    sprite.position = CGPointMake(self.size.width+planet.size.width, yPosition);
     sprite.zPosition = backgroundLayer;
     sprite.alpha = 1;
     sprite.name = @"planet";
     [self addChild:sprite];
     [sprite runAction:planetAction];
-    
+    if(rand>=8)
+        [sprite runAction:repeat];
+        
     NSLog(@"Planet: %f Rocket:%f",sprite.zPosition,rocket.zPosition);
     timerPlanet = nil;
     float timing = skRand(16, 35);
@@ -174,8 +202,8 @@ static const int maxNumberOfStar = 10;
     //Attivare movimento
     
     rocket.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:rocket.size.height/2];
-    rocket.physicsBody.categoryBitMask = shipCategory;
     rocket.physicsBody.dynamic = YES;
+    rocket.physicsBody.categoryBitMask = shipCategory;
     rocket.physicsBody.contactTestBitMask = obstacleCategory;
     rocket.physicsBody.collisionBitMask = 0;
     rocket.name = @"ship";
@@ -214,7 +242,7 @@ static const int maxNumberOfStar = 10;
     if(_WelcomeScreen) {
         
         [self startBackgroundMusic];
-        
+        enemy_array = [[NSMutableDictionary alloc] init];
         LEVEL = 1;
         SpeedLevel = 5;
         numberOfStar=1;
@@ -319,7 +347,7 @@ static const int maxNumberOfStar = 10;
     [explosion setParticleBlendMode:SKBlendModeAdd];
     }
     
-    if([type isEqualToString:@"ufo"]) {
+    if([type containsString:@"ufo"]) {
         //TODO: set the right properties for your particle system!
         [explosion setParticleTexture:[SKTexture textureWithImageNamed:@"spark.png"]];
         [explosion setParticleColor:[UIColor blueColor]];
@@ -379,6 +407,32 @@ static const int maxNumberOfStar = 10;
     return explosion;
 }
 
+-(SKSpriteNode *)newEnemyMissile
+{
+    
+    SKTexture *rocketTexture1 = [SKTexture textureWithImageNamed:@"spark.png"];
+    rocketTexture1.filteringMode = SKTextureFilteringNearest;
+    SKSpriteNode *missile = [SKSpriteNode spriteNodeWithTexture:rocketTexture1];
+    
+    missile.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:missile.size.height];
+    missile.physicsBody.categoryBitMask = shipCategory;
+    missile.physicsBody.dynamic = YES;
+    missile.physicsBody.contactTestBitMask =  obstacleCategory;
+    missile.physicsBody.collisionBitMask = 0;
+    missile.name = @"enemy_laser";
+    missile.zPosition = gameLayer;
+    NSString *firePath = [[NSBundle mainBundle] pathForResource:@"Projectile" ofType:@"sks"];
+    SKEmitterNode *fire = [NSKeyedUnarchiver unarchiveObjectWithFile:firePath];
+    
+    fire.emissionAngle =  DEG2RAD(0.0f);
+    
+    [missile addChild:fire];
+    
+    //add this node to parent node
+    //    [self addChild:explosion];
+    return missile;
+}
+
 -(SKSpriteNode *)newMissile
 {
     
@@ -397,11 +451,9 @@ static const int maxNumberOfStar = 10;
     SKEmitterNode *fire = [NSKeyedUnarchiver unarchiveObjectWithFile:firePath];
     
     fire.emissionAngle =  DEG2RAD(180.0f);
-
     
     [missile addChild:fire];
 
-    
             //add this node to parent node
     //    [self addChild:explosion];
     return missile;
@@ -449,9 +501,55 @@ static const int maxNumberOfStar = 10;
     SKAction * actionMoveDone = [SKAction removeFromParent];
     SKAction *removeNode = [SKAction removeFromParent];
     [projectile runAction:[SKAction sequence:@[laserFireSoundAction,actionMove, actionMoveDone,removeNode]]];
-    
-    
+}
 
+-(void)enemyFire {    
+    @try {
+    if(superEnemy!=nil && imageJoystick!=nil) {
+    // 1 - Choose one of the touches to work with
+        CGPoint location = rocket.position;
+    
+    // 2 - Set up initial location of projectile
+    SKSpriteNode *projectile = [self newEnemyMissile];
+    projectile.name = @"enemy_laser";
+    projectile.position = superEnemy.enemy.position;
+    
+    // 3- Determine offset of location to projectile
+    CGPoint offset = rwSub(location, projectile.position);
+    
+    // 4 - Bail out if you are shooting down or backwards
+    //if (offset.x <= 0) return;
+    offset = CGPointMake(-10, 0);
+    // 5 - OK to add now - we've double checked position
+    [self addChild:projectile];
+    
+    // 6 - Get the direction of where to shoot
+    CGPoint direction = rwNormalize(offset);
+    
+    // 7 - Make it shoot far enough to be guaranteed off screen
+    CGPoint shootAmount = rwMult(direction, 1000);
+    
+    // 8 - Add the shoot amount to the current position
+    CGPoint realDest = rwAdd(shootAmount, projectile.position);
+    
+    // 9 - Create the actions
+    float velocity = 480.0/1.0;
+    float realMoveDuration = self.size.width / velocity;
+    SKAction *laserFireSoundAction = [SKAction playSoundFileNamed:@"laser_ship.caf" waitForCompletion:NO];
+    SKAction * actionMove = [SKAction moveTo:realDest duration:realMoveDuration];
+    SKAction * actionMoveDone = [SKAction removeFromParent];
+    SKAction *removeNode = [SKAction removeFromParent];
+    [projectile runAction:[SKAction sequence:@[laserFireSoundAction,actionMove, actionMoveDone,removeNode]]];
+    
+    timerEnemyShoot= nil;
+    float timing = skRand(0.5, 2);
+    if(enemyCanFire)
+        timerEnemyShoot = [NSTimer scheduledTimerWithTimeInterval:timing target:self selector:@selector(enemyFire) userInfo:nil repeats:NO];
+    }
+    }
+    @catch (NSException *exception) {
+    
+    }
 }
 
 static inline CGFloat skRandf() {
@@ -499,8 +597,9 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
         SKAction *sequence = [SKAction sequence:@[fadeIn, wait, fadeAway, removeNode]];
         [gameOverLabel runAction:sequence];
         
+        [self addSuperEnemy];
      //   self.gameOver = YES;
-        return;
+        //return;
     }
     
     [scoreLabel setText:[NSString stringWithFormat:@"Score: %ld", (long)score]];
@@ -516,6 +615,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     star.position = CGPointMake(self.size.width, skRand(0, self.size.height-20));
     star.name = @"star";
     star.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:0.5*star.size.width];
+    star.physicsBody.dynamic = false;
     
     SKAction *actionMoveStar = [SKAction moveByX:-1*(self.size.width+star.size.width) y:0 duration:SpeedLevel];
     SKAction *removeNode = [SKAction removeFromParent];
@@ -587,51 +687,93 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     */
 }
 
+
+-(void)setShipForCollision {
+    rocket.physicsBody.categoryBitMask = 4294967295;
+    rocket.physicsBody.contactTestBitMask = 0;
+    rocket.physicsBody.collisionBitMask = 0;
+}
+
+-(void)unsetShioForCollision {
+    rocket.physicsBody.categoryBitMask = shipCategory;
+    rocket.physicsBody.contactTestBitMask = obstacleCategory;
+    rocket.physicsBody.collisionBitMask = 0;
+}
+
+-(void)addSuperEnemy {
+    stopStar = true;
+    Enemy *ufo = [[Enemy alloc] initSuperEnemy:10];
+    ufo.name = [NSString stringWithFormat:@"ufo %0.f",numberOfUfo];
+    [enemy_array setObject:ufo forKey:ufo.name];
+    ufo.enemy.name = [NSString stringWithFormat:@"ufo %0.f",numberOfUfo];
+    //ufo.enemy.position = CGPointMake(self.size.width, skRand(0, self.size.height-20));
+    numberOfUfo++;
+    ufo.enemy.zPosition = gameLayer+1;
+    [self setShipForCollision];
+    ufo.enemy.position = CGPointMake(self.size.width, self.size.width/2);
+    stopStar = true;
+    enemyCanFire = true;
+    ufo.numberOfHit = 10;
+    SKAction *actionMoveEnemyX = [SKAction moveToX:(self.size.width/3)*2 duration:4];
+    SKAction *actionMoveEnemyY = [SKAction moveToY:rocket.position.y duration:1];
+    [ufo.enemy runAction:[SKAction sequence:@[actionMoveEnemyX,actionMoveEnemyY]]];
+    superEnemy = ufo;
+    [self enemyFire];
+    [self addChild:ufo.enemy];
+}
+
 - (void)addUfo
 {
-    SKSpriteNode *star = [[SKSpriteNode alloc] initWithImageNamed:@"ufo.png"];
-    star.xScale = 0.05;
-    star.yScale = 0.05;
-    star.position = CGPointMake(self.size.width, skRand(0, self.size.height-20));
-    star.name = @"ufo";
-    star.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:0.5*star.size.width];
-    
-    [self followShip:star];
-    /* If you want rebounding stars instead of explosions.       *
-     * You need to remove collision detection in order to do so  *
-     *                                                           *
-     //star.physicsBody.usesPreciseCollisionDetection = YES;     */
-    
-    //numberOfStar++;
+    Enemy *ufo = [[Enemy alloc] initWithPosition:CGPointMake(self.size.width, skRand(0, self.size.height-20))];
+    ufo.name = [NSString stringWithFormat:@"ufo %0.f",numberOfUfo];
+    [enemy_array setObject:ufo forKey:ufo.name];
+    ufo.enemy.name = [NSString stringWithFormat:@"ufo %0.f",numberOfUfo];
+   //ufo.enemy.position = CGPointMake(self.size.width, skRand(0, self.size.height-20));
     numberOfUfo++;
-    star.zPosition = gameLayer;
-    [self addChild:star];
+    ufo.enemy.zPosition = gameLayer;
+    /*if(ufo.superEnemy) {
+        [self setShipForCollision];
+        ufo.enemy.position = CGPointMake(self.size.width, self.size.width/2);
+        stopStar = true;
+        enemyCanFire = true;
+        ufo.numberOfHit = 10;
+        SKAction *actionMoveEnemyX = [SKAction moveToX:(self.size.width/3)*2 duration:4];
+        SKAction *actionMoveEnemyY = [SKAction moveToY:rocket.position.y duration:1];
+        [ufo.enemy runAction:[SKAction sequence:@[actionMoveEnemyX,actionMoveEnemyY]]];
+        superEnemy = ufo;
+        [self enemyFire];
+    }
+    else {*/
+        ufo.enemy.position = CGPointMake(self.size.width, skRand(0, self.size.height-20));
+        [self followShip:ufo.enemy];
+    //}
+    [self addChild:ufo.enemy];
+
 }
 
 -(void)didSimulatePhysics
 {
-    [self enumerateChildNodesWithName:@"star" usingBlock:^(SKNode *node, BOOL *stop) {
-        if (node.position.x < 0) {
-            [node removeFromParent];
-            numberOfStar--;
+    [[self children] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        SKNode *node = (SKNode *)obj;
+        if ([node.name containsString:@"ufo"]) {
+            if (node.position.x < 0) {
+                [enemy_array removeObjectForKey:node.name];
+                [node removeFromParent];
+                numberOfUfo--;
+            }
         }
-        
-    }];
-    
-    [self enumerateChildNodesWithName:@"ufo" usingBlock:^(SKNode *node, BOOL *stop) {
-        if (node.position.x < 0) {
-            [node removeFromParent];
-            numberOfUfo--;
+        else if ([node.name containsString:@"missile"]) {
+            if (node.position.x > self.frame.size.width) {
+                [node removeFromParent];
+                numberOfWeapons--;
+            }
         }
-        
-    }];
-   
-    [self enumerateChildNodesWithName:@"missile" usingBlock:^(SKNode *node, BOOL *stop) {
-        if (node.position.x > self.frame.size.width) {
-            [node removeFromParent];
-            numberOfWeapons--;
+        else if ([node.name containsString:@"star"]) {
+            if (node.position.x < 0) {
+                [node removeFromParent];
+                numberOfStar--;
+            }
         }
-        
     }];
     
     if(numberOfUfo<=0 && numberOfStar<=0) {
@@ -677,13 +819,14 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 //-----------------------THIS WILL BE BETTER----------------------------------
 -(void)didBeginContact:(SKPhysicsContact *)contact
 {
+    BOOL canDestroyed = false;
     //insantiate new explosion on contact
-    
     //set the position of contact
-   // ex.position = contact.bodyB.node.position;
+    // ex.position = contact.bodyB.node.position;
     SKEmitterNode *ex;
     
     if([contact.bodyA.node.name isEqualToString:@"star"]) {
+        canDestroyed = true;
         numberOfStar--;
         //There are a collision from astronaut to => missile
         if([contact.bodyB.node.name isEqualToString:@"missile"]) {                  //Kill the astronaut
@@ -698,7 +841,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
         [contact.bodyA.node removeFromParent];                              //Remove the astronaut
     }
     else if([contact.bodyB.node.name isEqualToString:@"star"]) {            //Somewhat has a contact with astronaut
-       
+        canDestroyed = true;
         numberOfStar--;
         score++;
         if([contact.bodyA.node.name isEqualToString:@"ship"]) {             //Is the ship?
@@ -708,8 +851,6 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
             SKEmitterNode *fire = [self newBubble];
             fire.position = rocket.position;
             [self addChild:fire];
-
-            
         }
         if([contact.bodyA.node.name isEqualToString:@"missile"])            //Or is a missile?
         {
@@ -719,17 +860,17 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
             SKAction *explosion_ufo = [SKAction playSoundFileNamed:@"shake.caf" waitForCompletion:NO];
             [self runAction:explosion_ufo];
         }
-    //    NSLog(@"Collision with star");
         [contact.bodyB.node removeFromParent];
     }
     
-    if([contact.bodyB.node.name isEqualToString:@"ufo"]) {
-        
+    if([contact.bodyB.node.name containsString:@"ufo"])
+    {
         SKAction *explosion_ufo ;
         ex = [self newExplosion: contact.bodyB.node.name];
 
         if([contact.bodyA.node.name isEqualToString:@"ship"])
         {
+            canDestroyed = true;
             [self deleteLife];
             [self shake:2];
             explosion_ufo = [SKAction playSoundFileNamed:@"explosion_large.caf" waitForCompletion:NO];
@@ -737,24 +878,69 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
         else if([contact.bodyA.node.name isEqualToString:@"missile"])
         {
             [contact.bodyA.node removeFromParent];
-            explosion_ufo = [SKAction playSoundFileNamed:@"explosion_small.caf" waitForCompletion:NO];
+            Enemy *obj_ufo = [enemy_array objectForKey:contact.bodyB.node.name];
+            if([obj_ufo hit])
+            {
+                if(obj_ufo.superEnemy){ stopStar = false; enemyCanFire = false; superEnemy = nil; [self unsetShioForCollision]; }
+                [enemy_array removeObjectForKey:contact.bodyB.node.name];
+                canDestroyed = true;
+                explosion_ufo = [SKAction playSoundFileNamed:@"explosion_small.caf" waitForCompletion:NO];
+            }
         }
-        [self runAction:explosion_ufo];
-        ex.position = contact.bodyB.node.position;
-        [contact.bodyB.node removeFromParent];
-    }
-    else if([contact.bodyA.node.name isEqualToString:@"ufo"]) {
-        if([contact.bodyB.node.name isEqualToString:@"missile"]) {
-            ex = [self newExplosion: contact.bodyA.node.name];
-            //set the position of contact
-           // ex.zPosition = 101;
-            ex.position = contact.bodyA.node.position;
+        if(canDestroyed) {
+            [self runAction:explosion_ufo];
+            ex.position = contact.bodyB.node.position;
             [contact.bodyB.node removeFromParent];
         }
-        SKAction *explosion_ufo = [SKAction playSoundFileNamed:@"explosion_small.caf" waitForCompletion:NO];
-        [self runAction:explosion_ufo];
-        
-         [contact.bodyA.node removeFromParent];
+    }
+    else if([contact.bodyA.node.name containsString:@"ufo"])
+    {
+        if([contact.bodyB.node.name isEqualToString:@"missile"])
+        {
+            [contact.bodyB.node removeFromParent];
+            Enemy *obj_ufo = [enemy_array objectForKey:contact.bodyA.node.name];
+            if([obj_ufo hit])
+            {
+                if(obj_ufo.superEnemy){ stopStar = false; enemyCanFire = false; superEnemy = nil; [self unsetShioForCollision]; }
+                [enemy_array removeObjectForKey:contact.bodyA.node.name];
+                canDestroyed = true;
+                ex = [self newExplosion: contact.bodyA.node.name];
+                //set the position of contact
+                // ex.zPosition = 101;
+                ex.position = contact.bodyA.node.position;
+                
+            }
+        }
+        if(canDestroyed)
+        {
+            SKAction *explosion_ufo = [SKAction playSoundFileNamed:@"explosion_small.caf" waitForCompletion:NO];
+            [self runAction:explosion_ufo];
+            [contact.bodyA.node removeFromParent];
+        }
+    }
+    
+    
+    if([contact.bodyA.node.name isEqualToString:@"enemy_laser"]) {
+        if([contact.bodyB.node.name isEqualToString:@"ship"])
+        {
+            [contact.bodyA.node removeFromParent];
+            canDestroyed = true;
+            [self deleteLife];
+            [self shake:2];
+            SKAction *explosion_ufo = [SKAction playSoundFileNamed:@"explosion_large.caf" waitForCompletion:NO];
+            [self runAction:explosion_ufo];
+        }
+    }
+    else if([contact.bodyB.node.name isEqualToString:@"enemy_laser"]) {
+        if([contact.bodyA.node.name isEqualToString:@"ship"])
+        {
+            [contact.bodyB.node removeFromParent];
+            canDestroyed = true;
+            [self deleteLife];
+            [self shake:2];
+            SKAction *explosion_ufo = [SKAction playSoundFileNamed:@"explosion_large.caf" waitForCompletion:NO];
+            [self runAction:explosion_ufo];
+        }
     }
 }
 
@@ -893,19 +1079,32 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     else
         stopStar = true;
     
+    if(stopStar) {
+        [[self children] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            SKNode *node = (SKNode *)obj;
+            if ([node.name containsString:@"ufo"]) {
+                Enemy *mm = [enemy_array objectForKey:node.name];
+                if(mm.superEnemy) {
+                    SKAction *actionMoveEnemy = [SKAction moveToY:rocket.position.y duration:0.3];
+                    [mm.enemy runAction:actionMoveEnemy];
+                }
+            }
+         }];
+     }
     
-    if(numberOfStar==0)
-    {
-        stopStar=false;
+    //if(numberOfStar==0)
+    //{
+    //    stopStar=false;
 
-    }
+   // }
     
-    [self enumerateChildNodesWithName:@"ufo" usingBlock:^(SKNode *node, BOOL *stop) {
+ /*   [self enumerateChildNodesWithName:@"ufo" usingBlock:^(SKNode *node, BOOL *stop) {
         if(node.position.x>rocket.position.x) {
             [self followShip:(SKSpriteNode*)node];
             NSLog(@"Follow node: %f",rocket.zPosition);
         }
     }];
+  */
     
     timerGenerator = nil;
     float timing = skRand(0.2, 2);

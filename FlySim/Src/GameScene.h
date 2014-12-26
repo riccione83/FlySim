@@ -11,6 +11,7 @@
 #import "JCJoystick.h"
 #import "JCImageJoystick.h"
 #import "JCButton.h"
+#import "Enemy.h"
 
 @interface GameScene : SKScene <SKPhysicsContactDelegate> {
     CFTimeInterval _dt;
@@ -21,6 +22,9 @@
     BOOL stopStar;
     NSTimer *timerGenerator;
     NSTimer *timerPlanet;
+    NSTimer *timerEnemyShoot;
+    bool enemyCanFire;
+    Enemy *superEnemy;
     float LEVEL;
     float SpeedLevel;
     NSInteger MAX_NUM_OF_STAR_PER_LEVEL;
@@ -34,6 +38,7 @@
     float MAX_POINT;
     NSInteger oldx,oldy;
     bool planetShowed;
+    NSMutableDictionary *enemy_array;
 }
 
 @property (nonatomic) BOOL WelcomeScreen;
