@@ -11,6 +11,7 @@
 
 @interface Enemy : NSObject{
  //   int numberOfHit;
+   // int MaxHP;
 }
 
 -(id) initWithPosition:(CGPoint) start_point;
@@ -19,7 +20,10 @@
 
 @property (nonatomic,retain) SKSpriteNode *enemy;
 @property (nonatomic,retain) NSString *name;
+@property (nonatomic,retain) SKNode *healthBar;
 @property (nonatomic) bool superEnemy;
 @property (nonatomic) int numberOfHit;
+@property (nonatomic) int enemyHP;
+@property (nonatomic) int MaxHP;
 
 @end

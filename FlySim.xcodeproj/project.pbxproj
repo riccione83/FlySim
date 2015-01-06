@@ -41,7 +41,9 @@
 		93244F3E1A4D61700047D605 /* enemy_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F3B1A4D61700047D605 /* enemy_3.png */; };
 		93244F401A4D63550047D605 /* planet_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F3F1A4D63550047D605 /* planet_5.png */; };
 		93244F421A4D66E40047D605 /* enemy_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 93244F411A4D66E40047D605 /* enemy_2.png */; };
-		93244F451A4D680E0047D605 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93244F441A4D680E0047D605 /* Enemy.m */; };
+		9380B65F1A50709000984915 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9380B65E1A50709000984915 /* explosion.sks */; };
+		939B47531A4EB17400E621E4 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 939B47521A4EB17400E621E4 /* Enemy.m */; };
+		939B47571A4EBDEA00E621E4 /* Enemy.sks in Resources */ = {isa = PBXBuildFile; fileRef = 939B47561A4EBDEA00E621E4 /* Enemy.sks */; };
 		93A268C719F7A0A1003335BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A268C619F7A0A1003335BE /* main.m */; };
 		93A268D519F7A0A1003335BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A268D319F7A0A1003335BE /* Main.storyboard */; };
 		93A268D719F7A0A1003335BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93A268D619F7A0A1003335BE /* Images.xcassets */; };
@@ -110,8 +112,10 @@
 		93244F3B1A4D61700047D605 /* enemy_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy_3.png; path = Images/enemy_3.png; sourceTree = "<group>"; };
 		93244F3F1A4D63550047D605 /* planet_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = planet_5.png; path = Images/planet_5.png; sourceTree = "<group>"; };
 		93244F411A4D66E40047D605 /* enemy_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy_2.png; path = Images/enemy_2.png; sourceTree = "<group>"; };
-		93244F431A4D680E0047D605 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
-		93244F441A4D680E0047D605 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
+		9380B65E1A50709000984915 /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = explosion.sks; path = Particle/explosion.sks; sourceTree = "<group>"; };
+		939B47511A4EB17400E621E4 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enemy.h; path = Src/Enemy.h; sourceTree = "<group>"; };
+		939B47521A4EB17400E621E4 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Enemy.m; path = Src/Enemy.m; sourceTree = "<group>"; };
+		939B47561A4EBDEA00E621E4 /* Enemy.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Enemy.sks; path = Particle/Enemy.sks; sourceTree = "<group>"; };
 		93A268C119F7A0A1003335BE /* FlySim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlySim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A268C519F7A0A1003335BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A268C619F7A0A1003335BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 		938E4C4B1A27357E0066A637 /* Particle */ = {
 			isa = PBXGroup;
 			children = (
+				9380B65E1A50709000984915 /* explosion.sks */,
+				939B47561A4EBDEA00E621E4 /* Enemy.sks */,
 				9322F3C61A3D8030003B6598 /* astro.sks */,
 				9322F3C71A3D8030003B6598 /* Fire.sks */,
 				9322F3C81A3D8030003B6598 /* Projectile.sks */,
@@ -298,6 +304,8 @@
 		93E8B20F1A4322DD00C95D6C /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				939B47511A4EB17400E621E4 /* Enemy.h */,
+				939B47521A4EB17400E621E4 /* Enemy.m */,
 				93E8B2101A4322F700C95D6C /* AppDelegate.h */,
 				93E8B2111A4322F700C95D6C /* AppDelegate.m */,
 				93E8B2121A4322F700C95D6C /* FileSupport.h */,
@@ -310,8 +318,6 @@
 				93E8B2191A4322F700C95D6C /* Rocket.m */,
 				93E8B21A1A4322F700C95D6C /* WelcomeScreen.h */,
 				93E8B21B1A4322F700C95D6C /* WelcomeScreen.m */,
-				93244F431A4D680E0047D605 /* Enemy.h */,
-				93244F441A4D680E0047D605 /* Enemy.m */,
 			);
 			name = Src;
 			sourceTree = "<group>";
@@ -418,8 +424,10 @@
 				9322F3DE1A3D803E003B6598 /* ground.png in Resources */,
 				9322F3E61A3D803E003B6598 /* space.jpeg in Resources */,
 				93A44FAC1A4DF75500123CED /* rock_1.png in Resources */,
+				9380B65F1A50709000984915 /* explosion.sks in Resources */,
 				93244F2E1A4D61620047D605 /* planet_4.png in Resources */,
 				9322F3E31A3D803E003B6598 /* rocket_1.png in Resources */,
+				939B47571A4EBDEA00E621E4 /* Enemy.sks in Resources */,
 				93244F2B1A4D61620047D605 /* planet_1.png in Resources */,
 				93244F381A4D61680047D605 /* rock_3.png in Resources */,
 				93244F371A4D61680047D605 /* rock_2.png in Resources */,
@@ -457,7 +465,7 @@
 				9322F3BF1A3D8007003B6598 /* JCButton.m in Sources */,
 				93E8B21C1A4322F700C95D6C /* AppDelegate.m in Sources */,
 				93E8B2211A4322F700C95D6C /* WelcomeScreen.m in Sources */,
-				93244F451A4D680E0047D605 /* Enemy.m in Sources */,
+				939B47531A4EB17400E621E4 /* Enemy.m in Sources */,
 				93E8B21D1A4322F700C95D6C /* FileSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

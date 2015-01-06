@@ -11,6 +11,7 @@
 @implementation Enemy 
 
 @synthesize numberOfHit;
+//@synthesize enemyHP;
 
 -(id) init {
     return [self initWithPosition:CGPointMake(0.0, 0.0)];
@@ -18,8 +19,10 @@
 
 -(id) initWithPosition:(CGPoint) start_point{
     if(self = [super init]) {
-        
+    _healthBar = [SKNode node];
     numberOfHit = 2;
+    _MaxHP = numberOfHit*100;
+    _enemyHP = numberOfHit * 100;
    float rnd = skRand(0, 1);  //0,1
     //float rnd = 1;
     NSString *ufoName;
@@ -34,7 +37,7 @@
         _superEnemy = false;
         _enemy.position = start_point;
         _enemy.name = @"ufo";
-        _enemy.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:0.5*_enemy.size.height];
+        _enemy.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:(0.5*_enemy.size.height)];
         _enemy.physicsBody.restitution=0.8;
         _enemy.physicsBody.dynamic = false;
         
@@ -44,6 +47,11 @@
 
 -(id) initSuperEnemy:(int) number_of_hits{
     if(self = [super init]) {
+        
+        _healthBar = [SKNode node];
+        numberOfHit = number_of_hits;
+        _MaxHP = numberOfHit*100;
+        _enemyHP = numberOfHit * 100;
         numberOfHit = number_of_hits;
         NSString *ufoName = @"enemy_3.png";
         _enemy = [[SKSpriteNode alloc] initWithImageNamed:ufoName];
@@ -52,7 +60,7 @@
         _superEnemy = true;
        // _enemy.position = start_point;
         _enemy.name = @"ufo";
-        _enemy.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:0.5*_enemy.size.height];
+        _enemy.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:(0.5*_enemy.size.height)*_enemy.yScale];
         _enemy.physicsBody.restitution=0.8;
         _enemy.physicsBody.dynamic = false;
     }
@@ -68,6 +76,8 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 
 -(BOOL)hit{
     numberOfHit--;
+    _enemyHP = numberOfHit * 100;
+    NSLog(@"Hit ufo - Hit to destroy: %d Powerbar: %d",numberOfHit,_enemyHP);
     if(numberOfHit<=0)
         return true;
     else return false;
