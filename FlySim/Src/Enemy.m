@@ -8,6 +8,11 @@
 
 #import "Enemy.h"
 
+static const uint32_t shipCategory =  0x1 << 0;
+static const uint32_t missileCategory =  0x1 << 1;
+static const uint32_t enemyCategory =  0x1 << 2;
+static const uint32_t superEnemyCategory = 0x1 << 6;
+
 @implementation Enemy 
 
 @synthesize numberOfHit;
@@ -40,6 +45,9 @@
         _enemy.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:(0.5*_enemy.size.height)];
         _enemy.physicsBody.restitution=0.8;
         _enemy.physicsBody.dynamic = false;
+        _enemy.physicsBody.categoryBitMask = enemyCategory;
+        _enemy.physicsBody.contactTestBitMask =  shipCategory | missileCategory;
+        _enemy.physicsBody.collisionBitMask = 0;
         
     }
     return self;
@@ -47,7 +55,6 @@
 
 -(id) initSuperEnemy:(int) number_of_hits{
     if(self = [super init]) {
-        
         _healthBar = [SKNode node];
         numberOfHit = number_of_hits;
         _MaxHP = numberOfHit*100;
@@ -58,11 +65,13 @@
         _enemy.xScale = 0.3;
         _enemy.yScale = 0.3;
         _superEnemy = true;
-       // _enemy.position = start_point;
         _enemy.name = @"ufo";
         _enemy.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:(0.5*_enemy.size.height)*_enemy.yScale];
         _enemy.physicsBody.restitution=0.8;
         _enemy.physicsBody.dynamic = false;
+        _enemy.physicsBody.categoryBitMask = superEnemyCategory;
+        _enemy.physicsBody.contactTestBitMask =  shipCategory | missileCategory;
+        _enemy.physicsBody.collisionBitMask = 0;
     }
     return self;
 }

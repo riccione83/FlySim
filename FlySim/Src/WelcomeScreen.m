@@ -18,6 +18,7 @@
 
 
 -(id)initWithSize:(CGSize)size {
+    
     if(self = [super initWithSize:size]) {
 
     }
@@ -60,7 +61,7 @@
         gameOverLabel.text = @"GAMEOVER - TAP TO RESTART";
         _GameOver = false;
     }
-    gameOverLabel.fontSize = 48;
+    gameOverLabel.fontSize = 30;
     gameOverLabel.zPosition = 4;
     gameOverLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                          CGRectGetMidY(self.frame));
@@ -71,17 +72,17 @@
    
     [self addShip];
     NSTimer *timerGenerator = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(addShip) userInfo:nil repeats:YES];
-   
+    
     
     SKNode *nerdText = [SKNode node];
     SKLabelNode *a = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    a.fontSize = 26;
+    a.fontSize = 20;
     a.fontColor = [SKColor yellowColor];
     SKLabelNode *b = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    b.fontSize = 26;
+    b.fontSize = 20;
     b.fontColor = [SKColor yellowColor];
     SKLabelNode *c = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    c.fontSize = 26;
+    c.fontSize = 20;
     c.fontColor = [SKColor yellowColor];
 
     
@@ -96,7 +97,7 @@
     [nerdText addChild:a];
     [nerdText addChild:b];
     [nerdText addChild:c];
-    nerdText.position = CGPointMake(CGRectGetMidX(self.frame), 250.0);
+    nerdText.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)-gameOverLabel.frame.size.height*2);
     [self addChild:nerdText];
     
     
@@ -117,6 +118,7 @@
     /* Called when a touch begins */
     
     GameScene *mainScene = [[GameScene alloc] initWithSize:self.size];
+    mainScene.scaleMode = self.scaleMode;
     mainScene.WelcomeScreen = true;
     SKTransition *transition = [SKTransition flipVerticalWithDuration:0.5];
     [self.view presentScene:mainScene transition:transition];
@@ -136,7 +138,7 @@
     SKSpriteNode *star = [[SKSpriteNode alloc] initWithImageNamed:@"rocket_1.png"];
     star.xScale = 0.1;
     star.yScale = 0.1;
-    star.position = CGPointMake(0, (self.size.width/2)-200);
+    star.position = CGPointMake(0, (self.frame.size.height/4));
     
     SKEmitterNode *rockettrail = fire;
     //the y-position needs to be slightly behind the spaceship

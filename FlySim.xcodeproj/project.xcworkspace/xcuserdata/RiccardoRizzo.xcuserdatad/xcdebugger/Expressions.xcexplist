@@ -14,10 +14,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[GameScene addStar]:GameScene.m">
+         contextName = "-[GameScene addUfo]:GameScene.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.size.height+star.size.height">
+               value = "ufo.enemy.name">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -33,23 +33,36 @@
          contextName = "-[GameScene didBeginContact:]:GameScene.m">
          <PersistentStrings>
             <PersistentString
-               value = "contact.bodyB.node.name">
+               value = "shipBody.categoryBitMask">
             </PersistentString>
             <PersistentString
-               value = "contact.bodyA.node.name">
+               value = "otherBody.categoryBitMask">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[GameScene addUfo]:GameScene.m">
+         contextName = "-[GameScene addStar]:GameScene.m">
          <PersistentStrings>
             <PersistentString
-               value = "ufo.enemy.name">
+               value = "self.size.height+star.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GameViewController viewWillLayoutSubviews]:GameViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "skView.bounds.size.width">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "-[GameScene enemyFire]:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "projectile.contactBitMask">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "__20-[GameScene update:]_block_invoke:GameScene.m">
@@ -75,6 +88,14 @@
             </PersistentString>
             <PersistentString
                value = "rocket.physicsBody.contactTestBitMask">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GameViewController viewDidLoad]:GameViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

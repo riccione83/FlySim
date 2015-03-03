@@ -12,6 +12,7 @@
 #import "JCImageJoystick.h"
 #import "JCButton.h"
 #import "Enemy.h"
+#import "NewLife.h"
 
 @interface GameScene : SKScene <SKPhysicsContactDelegate> {
     CFTimeInterval _dt;
@@ -19,6 +20,7 @@
    // float maxNumberOfStar;
     float numberOfStar;
     float numberOfUfo;
+    int ufo_point_cnt;
     BOOL stopStar;
     NSTimer *timerGenerator;
     NSTimer *timerPlanet;
@@ -42,5 +44,6 @@
 }
 
 @property (nonatomic) BOOL WelcomeScreen;
+-(id)initWithSize:(CGSize)size;
 
 @end
