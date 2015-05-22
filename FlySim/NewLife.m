@@ -16,11 +16,11 @@
 
 -(id) initWithPosition:(CGPoint) start_point{
     if(self = [super init]) {
-        _life = [[SKSpriteNode alloc] initWithImageNamed:@"rocket_1.png"];
-        _life.xScale = 0.1;
-        _life.yScale = 0.1;
+        _life = [[SKSpriteNode alloc] initWithImageNamed:@"spaceman.png"];
+        _life.xScale = 1;
+        _life.yScale = 1;
         _life.zRotation = M_PI/2;
-        _life.zPosition = 101;
+        _life.zPosition = 1;
         _life.position = start_point;
         _life.name = @"life";
         _life.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:((0.5*_life.size.height))];
@@ -44,6 +44,13 @@
         // rockettrail.zPosition = 2;
         
         [_life addChild:rockettrail];
+        
+        SKAction *Revolution = [SKAction rotateByAngle:-M_PI*1.5 duration: 2.0];
+        
+        SKAction *repeat = [SKAction repeatActionForever:Revolution];
+        
+        [_life runAction:repeat];
+    
     }
     return self;
 }

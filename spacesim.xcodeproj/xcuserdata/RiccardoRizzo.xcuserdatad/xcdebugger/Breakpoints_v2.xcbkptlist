@@ -264,6 +264,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[GameScene didSimulatePhysics]"
                   moduleName = "FlySim"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/RiccardoRizzo/Documents/Progetti/FlySim/FlySim/GameScene.m"
                   timestampString = "438777798.992711"
                   startingColumnNumber = "9223372036854775807"
@@ -278,6 +279,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "__31-[GameScene didSimulatePhysics]_block_invoke244"
                   moduleName = "FlySim"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/RiccardoRizzo/Documents/Progetti/FlySim/FlySim/GameScene.m"
                   timestampString = "438777798.992871"
                   startingColumnNumber = "9223372036854775807"
@@ -680,11 +682,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453978443.14188"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "-startBackgroundMusic"
             landmarkType = "5">
          </BreakpointContent>
@@ -696,11 +698,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "640"
-            endingLineNumber = "640"
+            startingLineNumber = "685"
+            endingLineNumber = "685"
             landmarkName = "-addStar"
             landmarkType = "5">
          </BreakpointContent>
@@ -712,11 +714,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880808.916995"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1185"
-            endingLineNumber = "1185"
+            startingLineNumber = "1278"
+            endingLineNumber = "1278"
             landmarkName = "-shake:"
             landmarkType = "5">
          </BreakpointContent>
@@ -760,11 +762,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "787"
-            endingLineNumber = "787"
+            startingLineNumber = "832"
+            endingLineNumber = "832"
             landmarkName = "-addSuperEnemy"
             landmarkType = "5">
          </BreakpointContent>
@@ -776,11 +778,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "788"
-            endingLineNumber = "788"
+            startingLineNumber = "833"
+            endingLineNumber = "833"
             landmarkName = "-addSuperEnemy"
             landmarkType = "5">
          </BreakpointContent>
@@ -792,11 +794,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "789"
-            endingLineNumber = "789"
+            startingLineNumber = "834"
+            endingLineNumber = "834"
             landmarkName = "-addSuperEnemy"
             landmarkType = "5">
          </BreakpointContent>
@@ -824,11 +826,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880808.916995"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1204"
-            endingLineNumber = "1204"
+            startingLineNumber = "1297"
+            endingLineNumber = "1297"
+            landmarkName = "@implementation GameScene"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlySim/Src/GameScene.m"
+            timestampString = "453979466.348649"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "848"
+            endingLineNumber = "848"
+            landmarkName = "-addSuperEnemy"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlySim/Src/GameScene.m"
+            timestampString = "453995372.505028"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1306"
+            endingLineNumber = "1306"
             landmarkName = "-generateNewStar"
             landmarkType = "5">
          </BreakpointContent>
@@ -840,27 +874,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "803"
-            endingLineNumber = "803"
-            landmarkName = "-addUfo"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880808.916995"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1213"
-            endingLineNumber = "1213"
+            startingLineNumber = "1312"
+            endingLineNumber = "1312"
             landmarkName = "-generateNewStar"
             landmarkType = "5">
          </BreakpointContent>
@@ -872,27 +890,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880808.916995"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1219"
-            endingLineNumber = "1219"
-            landmarkName = "-generateNewStar"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "876"
-            endingLineNumber = "876"
+            startingLineNumber = "928"
+            endingLineNumber = "928"
             landmarkName = "-newBubble"
             landmarkType = "5">
          </BreakpointContent>
@@ -904,7 +906,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "543"
@@ -920,7 +922,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "542"
@@ -936,7 +938,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "268"
@@ -952,7 +954,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "556"
@@ -968,11 +970,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "771"
-            endingLineNumber = "771"
+            startingLineNumber = "816"
+            endingLineNumber = "816"
+            landmarkName = "-setShipForCollision"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlySim/Src/GameScene.m"
+            timestampString = "453979466.348649"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "822"
+            endingLineNumber = "822"
             landmarkName = "-unsetShioForCollision"
             landmarkType = "5">
          </BreakpointContent>
@@ -984,12 +1002,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "777"
-            endingLineNumber = "777"
-            landmarkName = "-addSuperEnemy"
+            startingLineNumber = "817"
+            endingLineNumber = "817"
+            landmarkName = "-setShipForCollision"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1000,23 +1018,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "772"
-            endingLineNumber = "772"
-            landmarkName = "-unsetShioForCollision"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "224"
@@ -1032,12 +1034,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "778"
-            endingLineNumber = "778"
-            landmarkName = "-addSuperEnemy"
+            startingLineNumber = "823"
+            endingLineNumber = "823"
+            landmarkName = "-unsetShioForCollision"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1064,11 +1066,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880808.916995"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1275"
-            endingLineNumber = "1275"
+            startingLineNumber = "1373"
+            endingLineNumber = "1373"
             landmarkName = "-drawHealthBar:withName:andHealthPoints:andMaxHP:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1080,11 +1082,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880808.916995"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1395"
-            endingLineNumber = "1395"
+            startingLineNumber = "1493"
+            endingLineNumber = "1493"
             landmarkName = "-update:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1096,11 +1098,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880808.916995"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1211"
-            endingLineNumber = "1211"
+            startingLineNumber = "1304"
+            endingLineNumber = "1304"
             landmarkName = "-generateNewStar"
             landmarkType = "5">
          </BreakpointContent>
@@ -1112,11 +1114,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880808.916995"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1393"
-            endingLineNumber = "1393"
+            startingLineNumber = "1491"
+            endingLineNumber = "1491"
             landmarkName = "-update:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1128,11 +1130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880808.916995"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1380"
-            endingLineNumber = "1380"
+            startingLineNumber = "1478"
+            endingLineNumber = "1478"
             landmarkName = "-update:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1144,7 +1146,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "316"
@@ -1176,11 +1178,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "906"
-            endingLineNumber = "906"
+            startingLineNumber = "958"
+            endingLineNumber = "958"
             landmarkName = "-didBeginContact:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1192,11 +1194,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "911"
-            endingLineNumber = "911"
+            startingLineNumber = "963"
+            endingLineNumber = "963"
             landmarkName = "-didBeginContact:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1208,11 +1210,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "918"
-            endingLineNumber = "918"
+            startingLineNumber = "970"
+            endingLineNumber = "970"
             landmarkName = "-didBeginContact:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1224,11 +1226,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "917"
-            endingLineNumber = "917"
+            startingLineNumber = "969"
+            endingLineNumber = "969"
             landmarkName = "-didBeginContact:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1240,27 +1242,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "779"
-            endingLineNumber = "779"
-            landmarkName = "-addSuperEnemy"
+            startingLineNumber = "824"
+            endingLineNumber = "824"
+            landmarkName = "-unsetShioForCollision"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880808.916995"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1033"
-            endingLineNumber = "1033"
+            startingLineNumber = "1121"
+            endingLineNumber = "1121"
             landmarkName = "-didBeginContact:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1288,7 +1290,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "538"
@@ -1304,11 +1306,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "953"
-            endingLineNumber = "953"
+            startingLineNumber = "1023"
+            endingLineNumber = "1023"
             landmarkName = "-didBeginContact:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1320,11 +1322,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "904"
-            endingLineNumber = "904"
+            startingLineNumber = "956"
+            endingLineNumber = "956"
             landmarkName = "-didBeginContact:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1336,7 +1338,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "445"
@@ -1352,7 +1354,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "448"
@@ -1368,11 +1370,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "920"
-            endingLineNumber = "920"
+            startingLineNumber = "973"
+            endingLineNumber = "973"
             landmarkName = "-didBeginContact:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1384,11 +1386,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880808.916995"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1111"
-            endingLineNumber = "1111"
+            startingLineNumber = "1204"
+            endingLineNumber = "1204"
             landmarkName = "-checkLife"
             landmarkType = "5">
          </BreakpointContent>
@@ -1400,11 +1402,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880808.916995"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1110"
-            endingLineNumber = "1110"
+            startingLineNumber = "1203"
+            endingLineNumber = "1203"
             landmarkName = "-checkLife"
             landmarkType = "5">
          </BreakpointContent>
@@ -1416,11 +1418,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880808.916995"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1113"
-            endingLineNumber = "1113"
+            startingLineNumber = "1206"
+            endingLineNumber = "1206"
             landmarkName = "-checkLife"
             landmarkType = "5">
          </BreakpointContent>
@@ -1432,11 +1434,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880808.916995"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1116"
-            endingLineNumber = "1116"
+            startingLineNumber = "1209"
+            endingLineNumber = "1209"
             landmarkName = "-checkLife"
             landmarkType = "5">
          </BreakpointContent>
@@ -1448,11 +1450,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "942"
-            endingLineNumber = "942"
+            startingLineNumber = "1012"
+            endingLineNumber = "1012"
             landmarkName = "-didBeginContact:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1464,11 +1466,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "950"
-            endingLineNumber = "950"
+            startingLineNumber = "1020"
+            endingLineNumber = "1020"
             landmarkName = "-didBeginContact:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1480,11 +1482,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "949"
-            endingLineNumber = "949"
+            startingLineNumber = "1019"
+            endingLineNumber = "1019"
             landmarkName = "-didBeginContact:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1496,7 +1498,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880684.012984"
+            timestampString = "453979466.348649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "300"
@@ -1512,12 +1514,220 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlySim/Src/GameScene.m"
-            timestampString = "445880725.172619"
+            timestampString = "453995372.505028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "986"
-            endingLineNumber = "986"
+            startingLineNumber = "1057"
+            endingLineNumber = "1057"
             landmarkName = "-didBeginContact:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlySim/Src/GameScene.m"
+            timestampString = "453979466.348649"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
+            landmarkName = "-didMoveToView:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlySim/Src/GameScene.m"
+            timestampString = "453978443.14188"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "-startBackgroundMusic"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlySim/Src/GameScene.m"
+            timestampString = "453979466.348649"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "871"
+            endingLineNumber = "871"
+            landmarkName = "-enemyShoot:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlySim/Src/GameScene.m"
+            timestampString = "453979466.348649"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "596"
+            endingLineNumber = "596"
+            landmarkName = "-enemyFireNode:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlySim/Src/GameScene.m"
+            timestampString = "453995372.505028"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1489"
+            endingLineNumber = "1489"
+            landmarkName = "-update:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlySim/Src/GameScene.m"
+            timestampString = "453995372.505028"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1469"
+            endingLineNumber = "1469"
+            landmarkName = "-update:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[GameScene update:]"
+                  moduleName = "FlySim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/RiccardoRizzo/Documents/FlySim/FlySim/Src/GameScene.m"
+                  timestampString = "453978667.492299"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1459"
+                  endingLineNumber = "1459"
+                  offsetFromSymbolStart = "2192">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__20-[GameScene update:]_block_invoke"
+                  moduleName = "FlySim"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/RiccardoRizzo/Documents/FlySim/FlySim/Src/GameScene.m"
+                  timestampString = "453978667.492552"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1459"
+                  endingLineNumber = "1459"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlySim/Src/GameScene.m"
+            timestampString = "453995372.505028"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1303"
+            endingLineNumber = "1303"
+            landmarkName = "-generateNewStar"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlySim/Src/GameScene.m"
+            timestampString = "453995372.505028"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1471"
+            endingLineNumber = "1471"
+            landmarkName = "-update:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlySim/Src/GameScene.m"
+            timestampString = "453995372.505028"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1499"
+            endingLineNumber = "1499"
+            landmarkName = "-update:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlySim/Src/GameScene.m"
+            timestampString = "453979466.348649"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "895"
+            endingLineNumber = "895"
+            landmarkName = "-didSimulatePhysics"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlySim/Src/GameScene.m"
+            timestampString = "453995372.505028"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1301"
+            endingLineNumber = "1301"
+            landmarkName = "-generateNewStar"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

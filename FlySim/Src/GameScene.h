@@ -17,7 +17,9 @@
 @interface GameScene : SKScene <SKPhysicsContactDelegate> {
     CFTimeInterval _dt;
     CFTimeInterval _lastUpdateTime;
-   // float maxNumberOfStar;
+    int hitWithAsteroids;
+    int hitMissileAsteroid;
+    int numOfTryLoadStar;
     float numberOfStar;
     float numberOfUfo;
     int ufo_point_cnt;

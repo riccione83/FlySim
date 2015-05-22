@@ -39,17 +39,17 @@
     SKView * skView = (SKView *)self.view;
 
    if(!skView.scene) {
-     skView.showsFPS = YES;
-     skView.showsNodeCount = YES;
-       skView.showsPhysics;
-     skView.ignoresSiblingOrder = YES;
+    // skView.showsFPS = YES;
+    // skView.showsNodeCount = YES;
+    // skView.showsPhysics = YES;
+    // skView.ignoresSiblingOrder = YES;
  
      // Create and configure the scene.
      //GameScene *scene = [GameScene unarchiveFromFile:@"GameScene"]; 
     //GameScene *scene = [GameScene sceneWithSize:skView.bounds.size];
     //scene.scaleMode = SKSceneScaleModeResizeFill;
        GameScene *scene = [GameScene unarchiveFromFile:@"GameScene"];
-       scene.scaleMode = SKSceneScaleModeAspectFill;
+       scene.scaleMode =SKSceneScaleModeAspectFit; //SKSceneScaleModeAspectFill;
     
     NSLog(@"width: %f", scene.size.width);
     NSLog(@"Height: %f", scene.size.height);

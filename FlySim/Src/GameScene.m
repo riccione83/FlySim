@@ -26,6 +26,7 @@ static const uint32_t lifeCategory = 0x1 << 3;
 static const uint32_t pointCategory = 0x1 << 4;
 static const uint32_t enemyMissileCategory = 0x1 << 5;
 static const uint32_t superEnemyCategory = 0x1 << 6;
+static const uint32_t lowEnemyCategory =  0x1 << 7;
 
 //*** Const for health bar
 //const int MaxHP = 100;
@@ -138,7 +139,6 @@ const float HealthBarHeight = 10.0f;
     SKAction *removeNode = [SKAction removeFromParent];
     SKAction *planetAction = [SKAction  sequence:@[moveGroudSprite, removeNode]];
 
-    
     SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:planet];
     [sprite setScale:scale];
     sprite.position = CGPointMake(self.size.width+planet.size.width, yPosition);
@@ -169,7 +169,10 @@ const float HealthBarHeight = 10.0f;
 - (void)startBackgroundMusic
 {
     NSError *err;
-    NSURL *file = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"SpaceGame.caf" ofType:nil]];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"SpaceGame" ofType:@"caf"];
+    
+    NSURL *file = [NSURL fileURLWithPath:path];
     if(!_backgroundAudioPlayer)
     {
         
@@ -188,9 +191,10 @@ const float HealthBarHeight = 10.0f;
 }
 
 -(void)addJoystick {
+    
     //JCImageJoystic
     imageJoystick = [[JCImageJoystick alloc]initWithJoystickImage:(@"redStick.png") baseImage:@"stickbase.png"];
-    [imageJoystick setPosition:CGPointMake(imageJoystick.size.width+10, 100)];
+    [imageJoystick setPosition:CGPointMake(imageJoystick.size.width+50, 100)];
     
     [imageJoystick setScale:3.0];
     [imageJoystick setAlpha:0.5];
@@ -218,7 +222,7 @@ const float HealthBarHeight = 10.0f;
     //rocket.position = point;
     //Attivare movimento
     
-    rocket.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:(rocket.size.height/2)*(rocket.yScale*2)];
+    rocket.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:(rocket.size.height)*(rocket.yScale*2)];
     rocket.physicsBody.dynamic = YES;
     rocket.physicsBody.categoryBitMask = shipCategory;
     rocket.physicsBody.contactTestBitMask = enemyCategory | lifeCategory | pointCategory;
@@ -272,7 +276,7 @@ const float HealthBarHeight = 10.0f;
         SpeedLevel = 5;
         numberOfStar=1;
         MAX_NUM_OF_STAR_PER_LEVEL = 100;
-        enemyRateo = 0.95;  //0.95
+        enemyRateo = 0.80;  //0.95
         numberOfStar=0;
         Life = 5;
         ufo_point_cnt = 0;
@@ -297,7 +301,7 @@ const float HealthBarHeight = 10.0f;
         [scoreLabel setScale:1];
         [self addChild:scoreLabel];
         
-        SKLabelNode * pauseLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+    /*    SKLabelNode * pauseLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         pauseLabel.text = @"Pause";
         pauseLabel.fontSize = 48;
         pauseLabel.zPosition = otherLayer;  //
@@ -305,7 +309,7 @@ const float HealthBarHeight = 10.0f;
                                           CGRectGetMaxY(self.frame)-pauseLabel.fontSize);
         [pauseLabel setScale:1];
         [self addChild:pauseLabel];
-
+*/
     
         [self checkLife];
         [self addJoystick];
@@ -314,7 +318,7 @@ const float HealthBarHeight = 10.0f;
         timerPlanet = [NSTimer scheduledTimerWithTimeInterval:timing target:self selector:@selector(showPlanet) userInfo:nil repeats:NO];
         timerGenerator = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(generateNewStar) userInfo:nil repeats:NO];
         
-        [self addSuperEnemy];
+     //   [self addSuperEnemy];
         
     }
     else
@@ -441,7 +445,7 @@ const float HealthBarHeight = 10.0f;
     rocketTexture1.filteringMode = SKTextureFilteringNearest;
     SKSpriteNode *missile = [SKSpriteNode spriteNodeWithTexture:rocketTexture1];
     
-    missile.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:missile.size.height];
+    missile.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:(missile.size.height/2)];
     missile.physicsBody.categoryBitMask = enemyMissileCategory;
     missile.physicsBody.dynamic = YES;
     missile.physicsBody.contactTestBitMask =  shipCategory | missileCategory;
@@ -469,7 +473,7 @@ const float HealthBarHeight = 10.0f;
     rocketTexture1.filteringMode = SKTextureFilteringNearest;
     SKSpriteNode *missile = [SKSpriteNode spriteNodeWithTexture:rocketTexture1];
     
-    missile.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:missile.size.height];
+    missile.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:(missile.size.height/2)];
     missile.physicsBody.categoryBitMask = missileCategory;
     missile.physicsBody.dynamic = YES;
     missile.physicsBody.contactTestBitMask =  enemyCategory | pointCategory | lifeCategory;
@@ -576,6 +580,51 @@ const float HealthBarHeight = 10.0f;
     }
 }
 
+
+-(void)enemyFireNode:(NSTimer *)params {
+    
+    SKSpriteNode *node = (SKSpriteNode*)[params userInfo];
+    
+    if(node.parent) {
+    
+        // 1 - Choose one of the touches to work with
+        CGPoint location = rocket.position;
+        
+        // 2 - Set up initial location of projectile
+        SKSpriteNode *projectile = [self newEnemyMissile];
+        projectile.name = @"enemy_laser";
+        projectile.position = node.position;
+        
+        // 3- Determine offset of location to projectile
+        CGPoint offset = rwSub(location, projectile.position);
+        
+        // 4 - Bail out if you are shooting down or backwards
+        //if (offset.x <= 0) return;
+        offset = CGPointMake(-10, 0);
+        // 5 - OK to add now - we've double checked position
+        [self addChild:projectile];
+        
+        // 6 - Get the direction of where to shoot
+        CGPoint direction = rwNormalize(offset);
+        
+        // 7 - Make it shoot far enough to be guaranteed off screen
+        CGPoint shootAmount = rwMult(direction, 1000);
+        
+        // 8 - Add the shoot amount to the current position
+        CGPoint realDest = rwAdd(shootAmount, projectile.position);
+        
+        // 9 - Create the actions
+        float velocity = 480.0/1.0;
+        float realMoveDuration = self.size.width / velocity;
+        SKAction *laserFireSoundAction = [SKAction playSoundFileNamed:@"laser_ship.caf" waitForCompletion:NO];
+        SKAction * actionMove = [SKAction moveTo:realDest duration:realMoveDuration];
+        SKAction * actionMoveDone = [SKAction removeFromParent];
+        SKAction *removeNode = [SKAction removeFromParent];
+        [projectile runAction:[SKAction sequence:@[laserFireSoundAction,actionMove, actionMoveDone,removeNode]]];
+    }
+}
+
+
 static inline CGFloat skRandf() {
     return rand() / (CGFloat) RAND_MAX;
 }
@@ -632,7 +681,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 
 - (void)addStar
 {
-    SKSpriteNode *star = [[SKSpriteNode alloc] initWithImageNamed:@"spaceman.png"];
+    SKSpriteNode *star = [[SKSpriteNode alloc] initWithImageNamed:@"rock_3.png"];
     star.xScale = 0.5;
     star.yScale = 0.5;
     star.zPosition = gameLayer;
@@ -640,7 +689,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     star.name = @"star";
     star.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:(star.size.width/2)*star.yScale];
     star.physicsBody.dynamic = false;
-    star.physicsBody.categoryBitMask = pointCategory;
+    star.physicsBody.categoryBitMask = lowEnemyCategory;
     star.physicsBody.contactTestBitMask =  shipCategory | missileCategory;
     star.physicsBody.collisionBitMask = 0;
     
@@ -812,7 +861,14 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     [self followShip:ufo.enemy];
     [self addChild:ufo.healthBar];
     [self addChild:ufo.enemy];
+    [NSTimer scheduledTimerWithTimeInterval:skRand(0.5, 2) target:self selector:@selector(enemyShoot:) userInfo:ufo.enemy repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:skRand(0.5, 2) target:self selector:@selector(enemyShoot:) userInfo:ufo.enemy repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:skRand(0.5, 2) target:self selector:@selector(enemyShoot:) userInfo:ufo.enemy repeats:NO];
+}
 
+
+-(void) enemyShoot:(NSTimer*) params {
+    [self enemyFireNode:params];
 }
 
 -(void)didSimulatePhysics
@@ -914,7 +970,25 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     
     if ((shipBody.categoryBitMask & shipCategory) != 0)
     {
-        if((otherBody.categoryBitMask & lifeCategory) != 0)
+        if((otherBody.categoryBitMask & lowEnemyCategory) != 0)   //Collision with little asteroids
+        {
+            hitWithAsteroids++;
+            if(hitWithAsteroids>=5)
+            {
+                hitWithAsteroids=0;
+                [self deleteLife];
+                [self shake:2];
+                numberOfStar--;
+            }
+            SKEmitterNode *fire = [self newBubble];
+            fire.position = rocket.position;
+            fire.xScale = 3.0;
+            fire.yScale = 3.0;
+            [self shake:2];
+            [self addChild:fire];
+            [otherBody.node removeFromParent];
+        }
+        else if((otherBody.categoryBitMask & lifeCategory) != 0)
         {
             // Ship contach with a new life
             NSLog(@"Ship -> Life");
@@ -959,7 +1033,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
             [self runAction:explosion_ufo];
 
         }
-        else if((otherBody.categoryBitMask & pointCategory) != 0)  //Ship get a point
+       /* else if((otherBody.categoryBitMask & pointCategory) != 0)  //Ship get a point
         {
             NSLog(@"Ship -> Point");
             canDestroyed = true;
@@ -972,6 +1046,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
             [self addChild:fire];
             [otherBody.node removeFromParent];
         }
+        */
     }
     
     
@@ -980,6 +1055,23 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
         if((otherBody.categoryBitMask & lifeCategory) != 0)
         {  // Ship contach with a new life
             NSLog(@"Missile -> Life");
+        }
+        else if((otherBody.categoryBitMask & lowEnemyCategory) != 0)
+        {
+            NSLog(@"Missile -> Enemy Missile");
+            SKAction *explosion_ufo ;
+            ex = [self newExplosion:@"ufo"];
+            ex.position = otherBody.node.position;
+            hitMissileAsteroid++;
+            if(hitMissileAsteroid>=8)
+            {
+                hitMissileAsteroid=0;
+                [otherBody.node removeFromParent];
+                [shipBody.node removeFromParent];
+                explosion_ufo = [SKAction playSoundFileNamed:@"explosion_large.caf" waitForCompletion:NO];
+                [self runAction:explosion_ufo];
+            }
+
         }
         else if((otherBody.categoryBitMask & superEnemyCategory) != 0)
         {
@@ -1038,11 +1130,8 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
                     [self newText:@"Great! +10 point" start_to:otherBody.node.position];
                 }
                 else {
-                    ufo_point_cnt++;
-                    if(ufo_point_cnt>=5) {
-                        [self newText:@"+1 Point" start_to:otherBody.node.position];
-                        ufo_point_cnt = 0;
-                    }
+                    [self newText:@"+1 Point" start_to:otherBody.node.position];
+                    score++;
                 }
                 canDestroyed = true;
                 explosion_ufo = [SKAction playSoundFileNamed:@"explosion_small.caf" waitForCompletion:NO];
@@ -1059,6 +1148,14 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
         else if((otherBody.categoryBitMask & enemyMissileCategory) != 0)
         {
             NSLog(@"Missile -> Enemy Missile");
+            SKAction *explosion_ufo ;
+            ex = [self newExplosion:@"ufo"];
+ 
+            explosion_ufo = [SKAction playSoundFileNamed:@"explosion_large.caf" waitForCompletion:NO];
+            [self runAction:explosion_ufo];
+            ex.position = otherBody.node.position;
+            [otherBody.node removeFromParent];
+            [shipBody.node removeFromParent];
         }
         else if((otherBody.categoryBitMask & pointCategory) != 0)
         {
@@ -1221,11 +1318,16 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
         
         [self runAction: makeStars];
     }
-   // else
-   // {
-       // stopStar = true;
-       // if(numberOfStar==0 ) stopStar = false;
-  //  }
+    if(numberOfStar>=(maxNumberOfStar+1))
+    {
+        numOfTryLoadStar++;
+        if(numOfTryLoadStar>=5)
+        {
+            numOfTryLoadStar=0;
+            numberOfStar = 0;
+            NSLog(@"Unlock star generator");
+        }
+    }
     
     timerGenerator = nil;
     float timing = skRand(0.2, 2);
@@ -1392,8 +1494,10 @@ static inline CGPoint rwNormalize(CGPoint a) {
                 mm.healthBar.position = CGPointMake(mm.enemy.position.x - HealthBarWidth/2.0f + 0.5f, mm.enemy.position.y - (mm.enemy.size.height/2.0f - 15.0f + 200.0f) * mm.enemy.yScale);
                 
             }
-           
         }
+       /* if ([node.name containsString:@"star"]) {
+            NSLog(@"Star");
+        }*/
     }];
 
    // _cannonHP = MAX(0, _cannonHP - 10);

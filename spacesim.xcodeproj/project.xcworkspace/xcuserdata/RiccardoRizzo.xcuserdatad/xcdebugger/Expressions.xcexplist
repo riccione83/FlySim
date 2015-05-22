@@ -3,6 +3,76 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[GameScene addRocket]:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "rocket.physicsBody.categoryBitMask">
+            </PersistentString>
+            <PersistentString
+               value = "rocket.physicsBody.contactTestBitMask">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GameScene enemyFireNode:]:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "node.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__20-[GameScene update:]_block_invoke:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "node.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GameViewController viewDidLoad]:GameViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GameScene addStar]:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.size.height+star.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GameScene didBeginContact:]:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "shipBody.categoryBitMask">
+            </PersistentString>
+            <PersistentString
+               value = "otherBody.categoryBitMask">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GameScene followShip:]:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "SpeedLevel*deltaX">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GameScene checkLife]:GameScene.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "life1.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[GameScene setShipForCollision]:GameScene.m">
          <PersistentStrings>
             <PersistentString
@@ -22,33 +92,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[GameScene checkLife]:GameScene.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "life1.position">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[GameScene didBeginContact:]:GameScene.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "shipBody.categoryBitMask">
-            </PersistentString>
-            <PersistentString
-               value = "otherBody.categoryBitMask">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[GameScene addStar]:GameScene.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.size.height+star.size.height">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "-[GameViewController viewWillLayoutSubviews]:GameViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -61,41 +104,6 @@
          <PersistentStrings>
             <PersistentString
                value = "projectile.contactBitMask">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "__20-[GameScene update:]_block_invoke:GameScene.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "node.name">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[GameScene followShip:]:GameScene.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "SpeedLevel*deltaX">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[GameScene addRocket]:GameScene.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "rocket.physicsBody.categoryBitMask">
-            </PersistentString>
-            <PersistentString
-               value = "rocket.physicsBody.contactTestBitMask">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[GameViewController viewDidLoad]:GameViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.view">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -40,7 +40,7 @@ static const uint32_t obstacleCategory =  0x1 << 1;
         rocket.position = point;
         //Attivare movimento
     
-        rocket.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:rocket.size.height/2];
+        rocket.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:rocket.size.height];
         rocket.physicsBody.categoryBitMask = shipCategory;
         rocket.physicsBody.dynamic = YES;
         rocket.physicsBody.contactTestBitMask = obstacleCategory;
